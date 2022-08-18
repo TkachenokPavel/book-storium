@@ -1,15 +1,19 @@
 import { Routes, Route } from "react-router-dom";
-import { Home, Book, Cart, Account, Favorites, Reset, SignIn, Search } from "../pages";
+import { Home, Book, Cart, Account, Favorites, Reset, SignIn, Search, NotFound } from "../pages";
+import { routes } from "./routes";
 
 export const AppRouter = () => {
-    return <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/search" element={<Search />} />
-        <Route path="/book" element={<Book />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/account" element={<Account />} />
-        <Route path="/favorites" element={<Favorites />} />
-        <Route path="/reset" element={<Reset />} />
-        <Route path="/sign-in" element={<SignIn />} />
-    </Routes>
+    return (
+        <Routes>
+            <Route path={routes.HOME} element={<Home />} />
+            <Route path={routes.SEARCH} element={<Search />} />
+            <Route path={routes.BOOK} element={<Book />} />
+            <Route path={routes.CART} element={<Cart />} />
+            <Route path={routes.ACCOUNT} element={<Account />} />
+            <Route path={routes.FAVORITES} element={<Favorites />} />
+            <Route path={routes.RESET} element={<Reset />} />
+            <Route path={routes.SIGN_IN} element={<SignIn />} />
+            <Route path={routes.NOT_FOUND} element={<NotFound />} />
+        </Routes>
+    )
 }

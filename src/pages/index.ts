@@ -6,6 +6,7 @@ import { Home } from "./Home";
 import { Reset } from "./Reset";
 import { Search } from "./Search";
 import { SignIn } from "./SignIn";
+import { NotFound } from "./NotFound";
 
 export {
     Account,
@@ -15,5 +16,6 @@ export {
     Home,
     Reset,
     Search,
-    SignIn
+    SignIn,
+    NotFound
 }

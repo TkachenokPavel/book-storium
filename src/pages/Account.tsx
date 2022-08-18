@@ -1,7 +1,10 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
+import { routes } from '../router/routes'
 
 export const Account = () => {
     return (
-        <div>Account</div>
+        <div>
+            <Link to={routes.HOME}>Home</Link>
+        </div>
     )
 }
