@@ -1,5 +1,6 @@
 import { css } from 'styled-components';
 import { Color } from "./colors";
+import { Media } from "./media";
 
 export const H1 = css`
   font-family: 'Work Sans', sans-serif;
@@ -10,7 +11,7 @@ export const H1 = css`
 
   color: ${Color.PRIMARY};
 
-  @media(max-width: 576px) {
+  @media(${Media.SM}) {
     font-size: 32px;
     line-height: 44px;
   }
@@ -25,7 +26,7 @@ export const H2 = css`
 
   color: ${Color.PRIMARY};
 
-  @media(max-width: 576px) {
+  @media(${Media.SM}) {
     font-size: 28px;
     line-height: 40px;
   }
