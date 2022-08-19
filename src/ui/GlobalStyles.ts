@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { BODY } from "./typography";
 
 export const GlobalStyles = createGlobalStyle`
     html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
@@ -106,8 +107,6 @@ export const GlobalStyles = createGlobalStyle`
     input[type=button] {width: auto; overflow: visible;}
 
     body {
-        font-family: 'Inter', sans-serif;
-        font-weight: 500;
-        color: #000;
+        ${BODY}
     }
 `;
