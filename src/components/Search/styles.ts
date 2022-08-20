@@ -8,10 +8,10 @@ export const StyledSearch = styled.input`
 
   background: url(${search}) no-repeat 10px 10px;
   border: none;
-  border-bottom: 2px solid ${Color.GREY};
+  border-bottom: 2px solid ${Color.PRIMARY2};
 
   &:focus {
     outline: none;
-    border-bottom: 2px solid ${Color.PRIMARY2};
+    border-bottom: 2px solid ${Color.PRIMARY};
   }
 `;
