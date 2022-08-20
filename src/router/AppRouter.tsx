@@ -1,12 +1,12 @@
 import { Routes, Route } from "react-router-dom";
-import { MainTemplate } from "../components/MainTemplate";
+import { Layout } from "../components/Layout/Layout";
 import { Home, Book, Cart, Account, Favorites, Reset, SignIn, Search, NotFound } from "../pages";
 import { routes } from "./routes";
 
 export const AppRouter = () => {
     return (
         <Routes>
-            <Route path={routes.HOME} element={<MainTemplate />}>
+            <Route path={routes.HOME} element={<Layout />}>
                 <Route index element={<Home />} />
                 <Route path={routes.SEARCH} element={<Search />} />
                 <Route path={routes.BOOK} element={<Book />} />
