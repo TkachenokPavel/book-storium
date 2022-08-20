@@ -1,6 +1,16 @@
+import { INewBook } from "../../types/types"
+import { StyledCard, Title, Image, Price } from "./styles"
 
-export const Card = () => {
+interface IProps {
+    book: INewBook,
+}
+
+export const Card = ({ book: { image, price, title, isbn13 } }: IProps) => {
     return (
-        <div>Card</div>
+        <StyledCard id={isbn13}>
+            <Image src={image} />
+            <Title>{title}</Title>
+            <Price>{price}</Price>
+        </StyledCard>
     )
 }

@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react"
 import { BooksList } from "../../components"
 import { bookAPI } from "../../services/bookApi/bookApi"
+import { INewBook } from "../../types/types"
 import { StyledHome, Title } from "./styles"
 
 
 export const Home = () => {
-    const [newBooks, setNewBooks] = useState<any[]>([])
+    const [newBooks, setNewBooks] = useState<INewBook[]>([])
 
     useEffect(() => {
         bookAPI.getNew().then(response => {
