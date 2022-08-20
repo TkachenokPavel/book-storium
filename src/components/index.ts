@@ -4,6 +4,8 @@ import { Search } from "./Search";
 import { Navbar } from "./Navbar";
 import { NavbarItem } from "./NavbarItem";
 import { Footer } from "./Footer";
+import { BooksList } from "./BooksList";
+import { Card } from "./Card";
 
 export {
     Header,
@@ -11,5 +13,7 @@ export {
     Search,
     Navbar,
     NavbarItem,
-    Footer
+    Footer,
+    BooksList,
+    Card
 }

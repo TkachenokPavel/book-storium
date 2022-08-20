@@ -11,7 +11,7 @@ export const H1 = css`
 
   color: ${Color.PRIMARY};
 
-  @media(${Media.SM}) {
+  ${Media.SM} {
     font-size: 32px;
     line-height: 44px;
   }
@@ -26,7 +26,7 @@ export const H2 = css`
 
   color: ${Color.PRIMARY};
 
-  @media(${Media.SM}) {
+  ${Media.SM}{
     font-size: 28px;
     line-height: 40px;
   }
