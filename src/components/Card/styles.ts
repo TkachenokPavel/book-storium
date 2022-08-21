@@ -9,8 +9,10 @@ export const StyledCard = styled.li`
   width: 250px;
   height: 370px;
 
-  border: 1px solid ${Color.GREY};
-  border-radius: 10px;
+  border-radius: 15px;
+  background: #E7E7E7;
+  box-shadow:  9px -9px 18px #d7d7d7,
+             -9px 9px 18px #f7f7f7;
 `;
 
 export const Image = styled.img`
@@ -35,5 +37,7 @@ export const Price = styled.p`
   display: flex;
   align-self: flex-end;
 
-  padding: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+  max-height: 50px;
 `;
