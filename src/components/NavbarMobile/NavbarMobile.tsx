@@ -9,13 +9,20 @@ export const NavbarMobile = () => {
 
     return (
         <>
-            <AiOutlineMenu onClick={() => setIsOpen(true)} />
+            <AiOutlineMenu
+                onClick={() => setIsOpen(true)}
+                style={{
+                    position: 'absolute',
+                    right: '20',
+                    top: '30',
+                    cursor: 'pointer',
+                }} />
             <NavbarWrapper $isOpen={isOpen}>
                 <AiOutlineClose
                     onClick={() => setIsOpen(false)}
                     style={{
                         position: 'absolute',
-                        right: '20',
+                        right: '40',
                         top: '30',
                         cursor: 'pointer',
                     }} />

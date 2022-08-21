@@ -12,4 +12,8 @@ export const StyledHeader = styled.header`
 
     border-bottom: 2px solid ${Color.GREY};
 
+    ${Media.SM} {
+        flex-direction: column;
+        gap: 15px;
+    }
 `;

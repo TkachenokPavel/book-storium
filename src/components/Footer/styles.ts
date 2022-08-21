@@ -17,10 +17,12 @@ export const Copyright = styled.span`
   font-size: 12px;
   line-height: 16px;
   color: ${Color.SECONDARY};
+  text-align: center;
 `;
 
 export const Rights = styled.span`
   font-size: 12px;
   line-height: 16px;
   color: ${Color.SECONDARY};
+  text-align: center;
 `;

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Media } from '../../ui';
 
 export const Container = styled.div`
   display: flex;
@@ -10,6 +11,10 @@ export const Container = styled.div`
   padding: 0 40px;
 
   overflow: hidden;
+
+  ${Media.MD} {
+    padding: 0 20px;
+  }
 `;
 
 export const Main = styled.main`

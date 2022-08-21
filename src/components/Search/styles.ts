@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import search from '../../assets/icons/search.svg'
-import { Color } from '../../ui';
+import { Color, Media } from '../../ui';
 
 export const StyledSearch = styled.input`
   width: 45%;
@@ -13,5 +13,15 @@ export const StyledSearch = styled.input`
   &:focus {
     outline: none;
     border-bottom: 2px solid ${Color.PRIMARY};
+  }
+
+  ${Media.MD} {
+    width: 60%;
+    margin-right: 70px;
+  }
+
+  ${Media.SM} {
+    width: 90%;
+    margin: 0;
   }
 `;
