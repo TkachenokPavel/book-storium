@@ -1,17 +1,30 @@
+import { CSSProperties } from "react";
 import { INewBook } from "../../types/types"
 import { Card } from "../Card"
-import { StyledBooksList } from "./styles"
-import ClipLoader from "react-spinners/ClipLoader";
+import { ErrorMassage, StyledBooksList } from "./styles"
+import CircleLoader from "react-spinners/CircleLoader";
 
 interface IProps {
     newBooks: INewBook[],
-    isLoading: boolean
+    isLoading: boolean,
+    errorMessage: string
 }
 
-export const BooksList = ({ newBooks, isLoading }: IProps) => {
+const override: CSSProperties = {
+    display: "block",
+    marginTop: "100px",
+}
+
+export const BooksList = ({ newBooks, isLoading, errorMessage }: IProps) => {
     if (isLoading) {
         return (
-            <div>Loading</div>
+            <CircleLoader loading={isLoading} cssOverride={override} size={100} />
+        )
+    }
+
+    if (errorMessage) {
+        return (
+            <ErrorMassage>Sorry, {errorMessage}</ErrorMassage>
         )
     }
 

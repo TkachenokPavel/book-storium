@@ -8,17 +8,24 @@ import { StyledHome, Title } from "./styles"
 export const Home = () => {
     const [newBooks, setNewBooks] = useState<INewBook[]>([]);
     const [isLoading, setIsLoading] = useState<boolean>(true);
+    const [errorMessage, setErrorMessage] = useState<string>('')
 
     useEffect(() => {
-        bookAPI.getNew().then(response => {
-            setNewBooks(response.books)
-        });
+        bookAPI.getNew()
+            .then(response => {
+                setIsLoading(false)
+                setNewBooks(response.books)
+            })
+            .catch(error => {
+                setIsLoading(false);
+                setErrorMessage(error.message)
+            });
     }, [])
 
     return (
         <StyledHome>
             <Title>NEW RELEASES BOOKS</Title>
-            <BooksList newBooks={newBooks} isLoading={isLoading} />
+            <BooksList newBooks={newBooks} isLoading={isLoading} errorMessage={errorMessage} />
         </StyledHome>
     )
 }

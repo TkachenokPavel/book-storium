@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { INewBook } from '../../types/types';
 
 enum BookEndpoint {
     NEW = 'new',
@@ -13,7 +14,7 @@ class BookAPI {
     });
 
     public async getNew(): Promise<any> {
-        const { data } = await this.API.get<any>(BookEndpoint.NEW);
+        const { data } = await this.API.get<INewBook[]>(BookEndpoint.NEW);
 
         return data
     }

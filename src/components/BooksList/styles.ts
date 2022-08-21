@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { H3 } from '../../ui';
 
 export const StyledBooksList = styled.ul`
   display: grid;
@@ -8,4 +9,9 @@ export const StyledBooksList = styled.ul`
 
   width: 100%;
   margin-bottom: 30px;
+`;
+
+export const ErrorMassage = styled.p`
+  ${H3}
+  margin-top: 50px;
 `;
