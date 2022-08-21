@@ -6,7 +6,8 @@ import { StyledHome, Title } from "./styles"
 
 
 export const Home = () => {
-    const [newBooks, setNewBooks] = useState<INewBook[]>([])
+    const [newBooks, setNewBooks] = useState<INewBook[]>([]);
+    const [isLoading, setIsLoading] = useState<boolean>(true);
 
     useEffect(() => {
         bookAPI.getNew().then(response => {
@@ -17,7 +18,7 @@ export const Home = () => {
     return (
         <StyledHome>
             <Title>NEW RELEASES BOOKS</Title>
-            <BooksList newBooks={newBooks} />
+            <BooksList newBooks={newBooks} isLoading={isLoading} />
         </StyledHome>
     )
 }
