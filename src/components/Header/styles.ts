@@ -1,7 +1,8 @@
 import styled from 'styled-components';
-import { Color } from '../../ui';
+import { Color, Media } from '../../ui';
 
 export const StyledHeader = styled.header`
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -10,4 +11,5 @@ export const StyledHeader = styled.header`
     padding: 25px 0;
 
     border-bottom: 2px solid ${Color.GREY};
+
 `;
