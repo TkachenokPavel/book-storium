@@ -44,7 +44,7 @@ export const GlobalStyles = createGlobalStyle`
     q:after {content: ''; content: none;}
 
     a {
-        margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent;
+        margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent;text-decoration:none;
     }
 
     del {

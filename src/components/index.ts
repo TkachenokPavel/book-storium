@@ -6,6 +6,8 @@ import { NavbarItem } from "./NavbarItem";
 import { Footer } from "./Footer";
 import { BooksList } from "./BooksList";
 import { Card } from "./Card";
+import { CustomLink } from "./CustomLink";
+import { NavbarMobile } from "./NavbarMobile";
 
 export {
     Header,
@@ -15,5 +17,7 @@ export {
     NavbarItem,
     Footer,
     BooksList,
-    Card
+    Card,
+    CustomLink,
+    NavbarMobile
 }
