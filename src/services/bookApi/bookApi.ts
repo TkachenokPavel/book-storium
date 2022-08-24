@@ -17,7 +17,6 @@ class BookAPI {
 
         return data
     }
-
     public async getBook(isbn: string | undefined): Promise<any> {
         const { data } = await this.API.get(`${BookEndpoint.DETAIL_BOOK}/${isbn}`)
 

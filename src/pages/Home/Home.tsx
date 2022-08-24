@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { BooksList, Title } from "../../components"
-import { bookAPI } from "../../services/bookApi/bookApi"
+import { bookAPI } from "../../services"
 import { INewBook } from "../../types/types"
 import { StyledHome } from "./styles"
 

@@ -21,5 +21,5 @@ export {
     Card,
     CustomLink,
     NavbarMobile,
-    Title
+    Title,
 }
