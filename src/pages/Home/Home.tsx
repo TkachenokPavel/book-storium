@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
-import { BooksList } from "../../components"
+import { BooksList, Title } from "../../components"
 import { bookAPI } from "../../services/bookApi/bookApi"
 import { INewBook } from "../../types/types"
-import { StyledHome, Title } from "./styles"
+import { StyledHome } from "./styles"
 
 
 export const Home = () => {
@@ -24,7 +24,7 @@ export const Home = () => {
 
     return (
         <StyledHome>
-            <Title>NEW RELEASES BOOKS</Title>
+            <Title title='NEW RELEASES BOOKS' />
             <BooksList newBooks={newBooks} isLoading={isLoading} errorMessage={errorMessage} />
         </StyledHome>
     )

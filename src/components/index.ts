@@ -8,6 +8,7 @@ import { BooksList } from "./BooksList";
 import { Card } from "./Card";
 import { CustomLink } from "./CustomLink";
 import { NavbarMobile } from "./NavbarMobile";
+import { Title } from "./Title";
 
 export {
     Header,
@@ -19,5 +20,6 @@ export {
     BooksList,
     Card,
     CustomLink,
-    NavbarMobile
+    NavbarMobile,
+    Title
 }
