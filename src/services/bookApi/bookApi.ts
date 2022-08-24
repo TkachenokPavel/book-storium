@@ -12,10 +12,16 @@ class BookAPI {
         baseURL: this.BASE_URL,
     });
 
-    public async getNew() {
+    public async getNewBooks() {
         const { data } = await this.API.get(BookEndpoint.NEW);
 
         return data
+    }
+
+    public async getBook(isbn: string | undefined): Promise<any> {
+        const { data } = await this.API.get(`${BookEndpoint.DETAIL_BOOK}/${isbn}`)
+
+        return data;
     }
 }
 

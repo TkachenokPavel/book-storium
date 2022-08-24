@@ -11,7 +11,7 @@ export const Home = () => {
     const [errorMessage, setErrorMessage] = useState<string>('')
 
     useEffect(() => {
-        bookAPI.getNew()
+        bookAPI.getNewBooks()
             .then(result => {
                 setIsLoading(false);
                 setNewBooks(result.books)
