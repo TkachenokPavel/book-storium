@@ -10,9 +10,9 @@ export const StyledCard = styled.li`
   height: 370px;
 
   border-radius: 15px;
-  background: #E7E7E7;
-  box-shadow:  9px -9px 18px #d7d7d7,
-             -9px 9px 18px #f7f7f7;
+  background: #F7F7F7;
+  box-shadow:  12px 12px 13px #9c9c9c,
+             -12px -12px 13px #ffffff;
 `;
 
 export const Image = styled.img`

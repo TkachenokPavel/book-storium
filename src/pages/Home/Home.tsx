@@ -12,9 +12,9 @@ export const Home = () => {
 
     useEffect(() => {
         bookAPI.getNew()
-            .then(response => {
-                setIsLoading(false)
-                setNewBooks(response.books)
+            .then(result => {
+                setIsLoading(false);
+                setNewBooks(result.books)
             })
             .catch(error => {
                 setIsLoading(false);

@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom'
-import { routes } from '../router/routes'
+import { ROUTE } from '../router/routes'
 
 export const Account = () => {
     return (
         <div>
-            <Link to={routes.HOME}>Home</Link>
+            <Link to={ROUTE.HOME}>Home</Link>
         </div>
     )
 }
