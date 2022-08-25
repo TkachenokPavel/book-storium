@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { BODY, BODY2, Color, H2, H3 } from '../../ui';
+import { BODY, BODY2, Color, H2, H3, Media } from '../../ui';
 
 export const StyledBook = styled.section`
     display: flex;
@@ -22,6 +22,10 @@ export const BookImage = styled.img`
   width: 40%;
 
   background-color: ${Color.ORANGE};
+
+  ${Media.MD} {
+    width: 100%;
+  }
 `;
 
 export const BookDetails = styled.div`
@@ -29,6 +33,10 @@ export const BookDetails = styled.div`
   padding: 20px 0;
 
   border-top: 2px solid ${Color.GREY};
+
+  ${Media.MD} {
+    width: 100%;
+  }
 `;
 
 export const DetailsPriceWrapper = styled.div`
