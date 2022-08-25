@@ -26,7 +26,7 @@ export const BookImage = styled.img`
 
 export const BookDetails = styled.div`
   width: 50%;
-  padding: 20px 40px;
+  padding: 20px 0;
 
   border-top: 2px solid ${Color.GREY};
 `;
@@ -40,10 +40,6 @@ export const DetailsPriceWrapper = styled.div`
 
 export const Price = styled.span`
   ${H2}
-`;
-
-export const Rating = styled.span`
-  
 `;
 
 export const DetailsRowWrapper = styled.div`

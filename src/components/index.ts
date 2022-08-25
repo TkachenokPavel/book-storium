@@ -9,6 +9,7 @@ import { Card } from "./Card";
 import { CustomLink } from "./CustomLink";
 import { NavbarMobile } from "./NavbarMobile";
 import { Title } from "./Title";
+import { Rating } from "./Rating";
 
 export {
     Header,
@@ -22,4 +23,5 @@ export {
     CustomLink,
     NavbarMobile,
     Title,
+    Rating
 }

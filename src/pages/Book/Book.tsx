@@ -2,12 +2,12 @@ import { CSSProperties, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
 import CircleLoader from 'react-spinners/CircleLoader';
 import { ArrowBack } from '../../assets'
-import { Title } from '../../components';
+import { Rating, Title } from '../../components';
 import { ErrorMassage } from '../../components/BooksList/styles';
 import { bookAPI } from '../../services/bookApi/bookApi';
 import { IBookDetails } from '../../types/types';
 import { getAuthor } from '../../utils';
-import { BookDetails, BookImage, CartButton, DetailesDescription, DetailsPriceWrapper, DetailsRowWrapper, DetailsTitle, DetailsWrapper, Price, Rating, StyledBook } from './styles';
+import { BookDetails, BookImage, CartButton, DetailesDescription, DetailsPriceWrapper, DetailsRowWrapper, DetailsTitle, DetailsWrapper, Price, StyledBook } from './styles';
 
 const override: CSSProperties = {
     marginTop: "100px",
@@ -19,6 +19,7 @@ export const Book = () => {
     const [book, setBook] = useState<IBookDetails>();
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [errorMessage, setErrorMessage] = useState<string>('');
+    console.log(book)
 
     const handleArrow = () => {
         navigate(-1);
@@ -63,7 +64,7 @@ export const Book = () => {
                     <BookDetails>
                         <DetailsPriceWrapper>
                             <Price>{book.price}</Price>
-                            <Rating>{book.rating}</Rating>
+                            <Rating rating={book.rating} />
                         </DetailsPriceWrapper>
 
                         {detailedDescription.map(description => {
