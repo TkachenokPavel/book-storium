@@ -1,5 +1,6 @@
-import { Copyright, Rights, StyledFooter } from './styles'
-import { ReactComponent as Logo } from '../../assets/logo.svg'
+import { Logo } from '../../assets';
+import { Copyright, Rights, StyledFooter } from './styles';
+
 
 export const Footer = () => {
     return (

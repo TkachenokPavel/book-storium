@@ -16,20 +16,45 @@ const override: CSSProperties = {
 export const Book = () => {
     const navigate = useNavigate();
     const { isbn } = useParams();
-    const [book, setBook] = useState<IBookDetails>();
+    const [book, setBook] = useState<IBookDetails>({
+        authors: '',
+        desc: '',
+        error: '',
+        image: '',
+        isbn10: '',
+        isbn13: '',
+        language: '',
+        pages: '',
+        pdf: {},
+        price: '',
+        publisher: '',
+        rating: '',
+        subtitle: '',
+        title: '',
+        url: '',
+        year: '',
+    });
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [errorMessage, setErrorMessage] = useState<string>('');
-    console.log(book)
+
+    const { authors, desc, error, image, isbn13, language, pages, pdf, price, publisher, rating, subtitle, title, url, year } = book;
 
     const handleArrow = () => {
         navigate(-1);
     }
 
+    const detailedDescription = [
+        ['Authors', getAuthor(authors)],
+        ['Publisher', publisher],
+        ['Language', language],
+        ['Year', year],
+    ]
+
     useEffect(() => {
         bookAPI.getBook(isbn)
-            .then(result => {
+            .then(bookResponse => {
                 setIsLoading(false);
-                setBook(result)
+                setBook(bookResponse)
             })
             .catch(error => {
                 setIsLoading(false);
@@ -43,48 +68,42 @@ export const Book = () => {
                 <CircleLoader loading={isLoading} cssOverride={override} size={100} />
             </StyledBook>
         )
-    } else if (book) {
-        const detailedDescription = [
-            ['Authors', getAuthor(book.authors)],
-            ['Publisher', book.publisher],
-            ['Language', book.language],
-            ['Year', book.year],
-        ]
+    }
 
-        return (
-            <StyledBook>
-                <ArrowBack onClick={handleArrow} style={{
-                    cursor: 'pointer',
-                    alignSelf: 'self-start',
-                    margin: "20px 0",
-                }} />
-                <Title title={book.title} />
-                <DetailsWrapper>
-                    <BookImage src={book.image} />
-                    <BookDetails>
-                        <DetailsPriceWrapper>
-                            <Price>{book.price}</Price>
-                            <Rating rating={book.rating} />
-                        </DetailsPriceWrapper>
-
-                        {detailedDescription.map(description => {
-                            return (
-                                <DetailsRowWrapper key={description[0]}>
-                                    <DetailsTitle>{description[0]}</DetailsTitle>
-                                    <DetailesDescription>{description[1]}</DetailesDescription>
-                                </DetailsRowWrapper>
-                            )
-                        })}
-
-                        <CartButton type='button'>add to cart</CartButton>
-                    </BookDetails>
-                </DetailsWrapper>
-            </StyledBook>
-        )
-    } else {
+    if (errorMessage) {
         return (
             <ErrorMassage>Sorry, {errorMessage}</ErrorMassage>
         )
-
     }
+
+    return (
+        <StyledBook>
+            <ArrowBack onClick={handleArrow} style={{
+                cursor: 'pointer',
+                alignSelf: 'self-start',
+                margin: "20px 0",
+            }} />
+            <Title title={title} />
+            <DetailsWrapper>
+                <BookImage src={image} />
+                <BookDetails>
+                    <DetailsPriceWrapper>
+                        <Price>{price}</Price>
+                        <Rating rating={rating} />
+                    </DetailsPriceWrapper>
+
+                    {detailedDescription.map(description => {
+                        return (
+                            <DetailsRowWrapper key={description[0]}>
+                                <DetailsTitle>{description[0]}</DetailsTitle>
+                                <DetailesDescription>{description[1]}</DetailesDescription>
+                            </DetailsRowWrapper>
+                        )
+                    })}
+
+                    <CartButton type='button'>add to cart</CartButton>
+                </BookDetails>
+            </DetailsWrapper>
+        </StyledBook>
+    )
 }

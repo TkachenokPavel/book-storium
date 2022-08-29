@@ -1,9 +1,9 @@
 import { StyledHeader } from "./styles"
-import { ReactComponent as Logo } from "../../assets/logo.svg";
 import { Search } from "../Search";
 import { Navbar } from "../Navbar";
 import { useWindiwSize } from "../../hooks/useWindowSize";
 import { NavbarMobile } from "../NavbarMobile/NavbarMobile";
+import { Logo } from "../../assets";
 
 export const Header = () => {
     const { width } = useWindiwSize();

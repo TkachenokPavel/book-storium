@@ -1,3 +1,3 @@
-import { Cart, Favorite, Account, ArrowBack } from './icons/';
+import { Cart, Favorite, Account, ArrowBack, Logo } from './icons/';
 
-export { Cart, Favorite, Account, ArrowBack }
+export { Cart, Favorite, Account, ArrowBack, Logo }
