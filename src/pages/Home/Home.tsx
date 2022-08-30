@@ -12,13 +12,15 @@ export const Home = () => {
 
     useEffect(() => {
         bookAPI.getNewBooks()
-            .then(result => {
-                setIsLoading(false);
-                setNewBooks(result.books)
+            .then(newBooksResponse => {
+                setNewBooks(newBooksResponse.books)
             })
             .catch(error => {
-                setIsLoading(false);
                 setErrorMessage(error.message)
+            })
+            .finally(() => {
+                setIsLoading(false);
+                setErrorMessage('')
             });
     }, [])
 

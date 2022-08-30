@@ -10,6 +10,7 @@ import { CustomLink } from "./CustomLink";
 import { NavbarMobile } from "./NavbarMobile";
 import { Title } from "./Title";
 import { Rating } from "./Rating";
+import { BookTabs } from "./BookTabs";
 
 export {
     Header,
@@ -23,5 +24,6 @@ export {
     CustomLink,
     NavbarMobile,
     Title,
-    Rating
+    Rating,
+    BookTabs
 }

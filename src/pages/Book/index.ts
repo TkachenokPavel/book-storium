@@ -1,3 +1,3 @@
-import { Book } from "./Book";
+import { BookDetails } from "./BookDetails";
 
-export { Book }
+export { BookDetails }

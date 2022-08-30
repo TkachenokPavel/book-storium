@@ -7,13 +7,13 @@ import { ErrorMassage } from '../../components/BooksList/styles';
 import { bookAPI } from '../../services/bookApi/bookApi';
 import { IBookDetails } from '../../types/types';
 import { getAuthor } from '../../utils';
-import { BookDetails, BookImage, CartButton, DetailesDescription, DetailsPriceWrapper, DetailsRowWrapper, DetailsTitle, DetailsWrapper, Price, StyledBook } from './styles';
+import { BookDetailsList, BookImage, CartButton, DetailesDescription, DetailsPriceWrapper, DetailsRowWrapper, DetailsTitle, DetailsWrapper, Price, StyledBook } from './styles';
 
 const override: CSSProperties = {
     marginTop: "100px",
 }
 
-export const Book = () => {
+export const BookDetails = () => {
     const navigate = useNavigate();
     const { isbn } = useParams();
     const [book, setBook] = useState<IBookDetails>({
@@ -39,7 +39,7 @@ export const Book = () => {
 
     const { authors, desc, error, image, isbn13, language, pages, pdf, price, publisher, rating, subtitle, title, url, year } = book;
 
-    const handleArrow = () => {
+    const handleBack = () => {
         navigate(-1);
     }
 
@@ -53,13 +53,15 @@ export const Book = () => {
     useEffect(() => {
         bookAPI.getBook(isbn)
             .then(bookResponse => {
-                setIsLoading(false);
                 setBook(bookResponse)
             })
             .catch(error => {
-                setIsLoading(false);
                 setErrorMessage(error.message)
-            });
+            })
+            .finally(() => {
+                setIsLoading(false);
+                setErrorMessage('')
+            });;
     }, [isbn])
 
     if (isLoading) {
@@ -78,7 +80,7 @@ export const Book = () => {
 
     return (
         <StyledBook>
-            <ArrowBack onClick={handleArrow} style={{
+            <ArrowBack onClick={handleBack} style={{
                 cursor: 'pointer',
                 alignSelf: 'self-start',
                 margin: "20px 0",
@@ -86,7 +88,7 @@ export const Book = () => {
             <Title title={title} />
             <DetailsWrapper>
                 <BookImage src={image} />
-                <BookDetails>
+                <BookDetailsList>
                     <DetailsPriceWrapper>
                         <Price>{price}</Price>
                         <Rating rating={rating} />
@@ -102,7 +104,7 @@ export const Book = () => {
                     })}
 
                     <CartButton type='button'>add to cart</CartButton>
-                </BookDetails>
+                </BookDetailsList>
             </DetailsWrapper>
         </StyledBook>
     )

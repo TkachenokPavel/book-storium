@@ -28,7 +28,7 @@ export const BookImage = styled.img`
   }
 `;
 
-export const BookDetails = styled.div`
+export const BookDetailsList = styled.div`
   width: 50%;
   padding: 20px 0;
 

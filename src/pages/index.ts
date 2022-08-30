@@ -1,5 +1,5 @@
 import { Account } from "./Account";
-import { Book } from "./Book";
+import { BookDetails } from "./Book";
 import { Cart } from "./Cart";
 import { Favorites } from "./Favorites";
 import { Home } from "./Home";
@@ -10,7 +10,7 @@ import { NotFound } from "./NotFound";
 
 export {
     Account,
-    Book,
+    BookDetails,
     Cart,
     Favorites,
     Home,
