@@ -2,7 +2,7 @@ import { CSSProperties, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
 import CircleLoader from 'react-spinners/CircleLoader';
 import { ArrowBack } from '../../assets'
-import { Rating, Title } from '../../components';
+import { BookTabs, Rating, Title } from '../../components';
 import { ErrorMassage } from '../../components/BooksList/styles';
 import { bookAPI } from '../../services/bookApi/bookApi';
 import { IBookDetails } from '../../types/types';
@@ -105,6 +105,7 @@ export const BookDetails = () => {
 
                     <CartButton type='button'>add to cart</CartButton>
                 </BookDetailsList>
+                <BookTabs book={book} />
             </DetailsWrapper>
         </StyledBook>
     )
