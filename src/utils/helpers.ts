@@ -13,3 +13,7 @@ export const getAuthor = (authors: string): string => {
 export const getPrice = (price: string): string => {
     return price === '$0.00' ? 'Free' : price
 }
+
+export const validateSearchValue = (searchValue: string): string => {
+    return searchValue.trim().toLowerCase()
+}

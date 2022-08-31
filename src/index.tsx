@@ -2,6 +2,8 @@ import ReactDOM from 'react-dom/client';
 import { App } from './App';
 import { BrowserRouter } from "react-router-dom";
 import { GlobalStyles } from './ui/GlobalStyles';
+import { Provider } from 'react-redux';
+import { store } from './store/store';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -9,8 +11,10 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <BrowserRouter>
-    <GlobalStyles />
-    <App />
+    <Provider store={store}>
+      <GlobalStyles />
+      <App />
+    </Provider>
   </BrowserRouter>
 );
 
