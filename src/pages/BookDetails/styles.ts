@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { BODY, BODY2, Color, H2, H3, Media } from '../../ui';
+import { BODY, BODY2, Color, H2, H3, Media, S1 } from '../../ui';
 
 export const StyledBook = styled.section`
     display: flex;
@@ -39,7 +39,7 @@ export const BookDetailsList = styled.div`
   }
 `;
 
-export const DetailsPriceWrapper = styled.div`
+export const PriceWrapper = styled.div`
   display: flex;
   justify-content: space-between;
 
@@ -50,7 +50,7 @@ export const Price = styled.span`
   ${H2}
 `;
 
-export const DetailsRowWrapper = styled.div`
+export const RowWrapper = styled.div`
   display: flex;
   justify-content: space-between;
 
@@ -62,7 +62,7 @@ export const DetailsTitle = styled.span`
   color: ${Color.SECONDARY};
 `;
 
-export const DetailesDescription = styled.span`
+export const Description = styled.span`
   max-width: 70%;
 
   ${BODY2}
@@ -79,4 +79,23 @@ export const CartButton = styled.button`
   text-transform: uppercase;
 
   background: ${Color.PRIMARY};
+`;
+
+export const Preview = styled.a`
+  display: block;
+
+  margin-top: 24px;
+
+  ${S1};
+  text-align: center;
+`
+
+export const MoreDetails = styled.span`
+  display: inline-block;
+
+  margin-top: 20px;
+
+  font-weight: 700;
+
+  cursor: pointer;
 `;

@@ -6,8 +6,8 @@ import { BookTabs, Rating, Title } from '../../components';
 import { ErrorMassage } from '../../components/BooksList/styles';
 import { bookAPI } from '../../services/bookApi/bookApi';
 import { IBookDetails } from '../../types/types';
-import { getAuthor } from '../../utils';
-import { BookDetailsList, BookImage, CartButton, DetailesDescription, DetailsPriceWrapper, DetailsRowWrapper, DetailsTitle, DetailsWrapper, Price, StyledBook } from './styles';
+import { getAuthor, getPrice } from '../../utils';
+import { BookDetailsList, BookImage, CartButton, Description, PriceWrapper, RowWrapper, DetailsTitle, DetailsWrapper, Price, StyledBook, Preview, MoreDetails } from './styles';
 
 const override: CSSProperties = {
     marginTop: "100px",
@@ -36,18 +36,28 @@ export const BookDetails = () => {
     });
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [errorMessage, setErrorMessage] = useState<string>('');
+    const [isMoreDetails, setIsMoreDetails] = useState<boolean>(false);
 
-    const { authors, desc, error, image, isbn13, language, pages, pdf, price, publisher, rating, subtitle, title, url, year } = book;
+    const { authors, image, isbn13, language, pages, pdf, price, publisher, rating, title, year } = book;
 
     const handleBack = () => {
         navigate(-1);
+    }
+
+    const handleDetails = () => {
+        setIsMoreDetails(true)
     }
 
     const detailedDescription = [
         ['Authors', getAuthor(authors)],
         ['Publisher', publisher],
         ['Language', language],
+    ]
+
+    const moreDeatiledDescription = [
         ['Year', year],
+        ['Pages', pages],
+        ['isbn13', isbn13],
     ]
 
     useEffect(() => {
@@ -89,21 +99,35 @@ export const BookDetails = () => {
             <DetailsWrapper>
                 <BookImage src={image} />
                 <BookDetailsList>
-                    <DetailsPriceWrapper>
-                        <Price>{price}</Price>
+                    <PriceWrapper>
+                        <Price>{getPrice(price)}</Price>
                         <Rating rating={rating} />
-                    </DetailsPriceWrapper>
+                    </PriceWrapper>
 
                     {detailedDescription.map(description => {
                         return (
-                            <DetailsRowWrapper key={description[0]}>
+                            <RowWrapper key={description[0]}>
                                 <DetailsTitle>{description[0]}</DetailsTitle>
-                                <DetailesDescription>{description[1]}</DetailesDescription>
-                            </DetailsRowWrapper>
+                                <Description>{description[1]}</Description>
+                            </RowWrapper>
                         )
                     })}
 
+                    {isMoreDetails
+                        ? moreDeatiledDescription.map(description => {
+                            return (
+                                <RowWrapper key={description[0]}>
+                                    <DetailsTitle>{description[0]}</DetailsTitle>
+                                    <Description>{description[1]}</Description>
+                                </RowWrapper>
+                            )
+                        })
+                        : <MoreDetails onClick={handleDetails}>More details</MoreDetails>}
+
                     <CartButton type='button'>add to cart</CartButton>
+
+                    {pdf && <Preview href={Object.values(pdf)[0]}>Preview book</Preview>}
+
                 </BookDetailsList>
                 <BookTabs book={book} />
             </DetailsWrapper>

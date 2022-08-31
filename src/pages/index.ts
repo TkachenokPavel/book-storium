@@ -1,5 +1,5 @@
 import { Account } from "./Account";
-import { BookDetails } from "./Book";
+import { BookDetails } from "./BookDetails";
 import { Cart } from "./Cart";
 import { Favorites } from "./Favorites";
 import { Home } from "./Home";

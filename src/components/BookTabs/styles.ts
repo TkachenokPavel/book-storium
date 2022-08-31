@@ -62,3 +62,10 @@ export const StyledTabPanel = styled(TabPanel).attrs(() => ({
     display: block;
   }
 `;
+
+export const Subtitle = styled.p`
+  margin-bottom: 24px;
+`;
+
+export const Description = styled.p`
+`;

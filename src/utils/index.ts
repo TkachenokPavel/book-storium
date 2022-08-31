@@ -1,3 +1,3 @@
-import { getAuthor } from "./helpers";
+import { getAuthor, getPrice } from "./helpers";
 
-export { getAuthor }
+export { getAuthor, getPrice }

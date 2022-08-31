@@ -9,3 +9,7 @@ export const getAuthor = (authors: string): string => {
         return 'Unknown author'
     }
 }
+
+export const getPrice = (price: string): string => {
+    return price === '$0.00' ? 'Free' : price
+}

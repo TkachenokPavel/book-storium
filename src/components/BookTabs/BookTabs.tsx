@@ -1,12 +1,12 @@
 import { IBookDetails } from "../../types/types"
-import { StyledTabs, StyledTabList, StyledTab, StyledTabPanel } from "./styles"
+import { StyledTabs, StyledTabList, StyledTab, StyledTabPanel, Subtitle, Description } from "./styles"
 
 interface IProps {
     book: IBookDetails
 }
 
 export const BookTabs = ({ book }: IProps) => {
-    const { desc, authors } = book
+    const { desc, authors, subtitle } = book
 
     return (
         <StyledTabs
@@ -17,7 +17,10 @@ export const BookTabs = ({ book }: IProps) => {
                 <StyledTab>Description</StyledTab>
                 <StyledTab>Authors</StyledTab>
             </StyledTabList>
-            <StyledTabPanel>{desc}</StyledTabPanel>
+            <StyledTabPanel>
+                <Subtitle>{subtitle}</Subtitle>
+                <Description>{desc}</Description>
+            </StyledTabPanel>
             <StyledTabPanel>{authors}</StyledTabPanel>
         </StyledTabs>
     )
