@@ -4,8 +4,9 @@ import CircleLoader from 'react-spinners/CircleLoader';
 import { ArrowBack } from '../../assets'
 import { BookTabs, Rating, Title } from '../../components';
 import { ErrorMassage } from '../../components/BooksList/styles';
-import { bookAPI } from '../../services/bookApi/bookApi';
-import { IBookDetails } from '../../types/types';
+import { fetchBookDetails } from '../../store/features/bookDetails/bookDetailsSlice';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import { getBookDetails } from '../../store/selectors/bookDetailsSelector';
 import { getAuthor, getPrice } from '../../utils';
 import { BookDetailsList, BookImage, CartButton, Description, PriceWrapper, RowWrapper, DetailsTitle, DetailsWrapper, Price, StyledBook, Preview, MoreDetails } from './styles';
 
@@ -15,28 +16,11 @@ const override: CSSProperties = {
 
 export const BookDetails = () => {
     const navigate = useNavigate();
-    const { isbn } = useParams();
-    const [book, setBook] = useState<IBookDetails>({
-        authors: '',
-        desc: '',
-        error: '',
-        image: '',
-        isbn10: '',
-        isbn13: '',
-        language: '',
-        pages: '',
-        pdf: {},
-        price: '',
-        publisher: '',
-        rating: '',
-        subtitle: '',
-        title: '',
-        url: '',
-        year: '',
-    });
-    const [isLoading, setIsLoading] = useState<boolean>(true);
-    const [errorMessage, setErrorMessage] = useState<string>('');
+    const { isbn = '' } = useParams();
     const [isMoreDetails, setIsMoreDetails] = useState<boolean>(false);
+
+    const dispatch = useAppDispatch();
+    const { book, error, isLoading } = useAppSelector(getBookDetails)
 
     const { authors, image, isbn13, language, pages, pdf, price, publisher, rating, title, year } = book;
 
@@ -61,18 +45,8 @@ export const BookDetails = () => {
     ]
 
     useEffect(() => {
-        bookAPI.getBookDetails(isbn)
-            .then(bookResponse => {
-                setBook(bookResponse)
-            })
-            .catch(error => {
-                setErrorMessage(error.message)
-            })
-            .finally(() => {
-                setIsLoading(false);
-                setErrorMessage('')
-            });;
-    }, [isbn])
+        dispatch(fetchBookDetails(isbn))
+    }, [isbn, dispatch])
 
     if (isLoading) {
         return (
@@ -82,9 +56,9 @@ export const BookDetails = () => {
         )
     }
 
-    if (errorMessage) {
+    if (error) {
         return (
-            <ErrorMassage>Sorry, {errorMessage}</ErrorMassage>
+            <ErrorMassage>Sorry, {error}</ErrorMassage>
         )
     }
 

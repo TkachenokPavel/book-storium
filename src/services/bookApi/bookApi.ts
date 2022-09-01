@@ -19,14 +19,14 @@ class BookAPI {
         return newBooks
     };
 
-    public async getBookDetails(isbn: string | undefined): Promise<any> {
+    public async getBookDetails(isbn: string): Promise<any> {
         const { data } = await this.API.get(`${BookEndpoint.DETAIL_BOOK}/${isbn}`)
 
         return data;
     };
 
-    public async getSearchedBooks(query: string | undefined): Promise<any> {
-        const data = await this.API.get(`${BookEndpoint.SEARCH}/${query}/1`)
+    public async getSearchedBooks(query: string | undefined, page: string = '1'): Promise<any> {
+        const data = await this.API.get(`${BookEndpoint.SEARCH}/${query}/${page}`)
 
         return data;
     };
