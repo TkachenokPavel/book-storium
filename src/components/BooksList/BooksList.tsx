@@ -1,13 +1,13 @@
 import { CSSProperties } from "react";
-import { INewBook } from "../../types/types"
+import { IBookShort } from "../../types/types"
 import { Card } from "../Card"
 import { ErrorMassage, StyledBooksList } from "./styles"
 import CircleLoader from "react-spinners/CircleLoader";
 
 interface IProps {
-    newBooks: INewBook[],
+    newBooks: IBookShort[],
     isLoading: boolean,
-    errorMessage: string
+    errorMessage: string | null
 }
 
 const override: CSSProperties = {

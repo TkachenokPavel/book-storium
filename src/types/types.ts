@@ -1,4 +1,4 @@
-export interface INewBook {
+export interface IBookShort {
     image: string,
     isbn13: string,
     price: string,

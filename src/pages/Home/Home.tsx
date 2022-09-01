@@ -1,33 +1,23 @@
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { BooksList, Title } from "../../components"
-import { bookAPI } from "../../services"
-import { INewBook } from "../../types/types"
+import { fetchNewBooks } from "../../store/features/newBooks/newBooksSlice"
+import { useAppDispatch, useAppSelector } from "../../store/hooks"
+import { getNewBooks } from "../../store/selectors/newBooksSelector"
 import { StyledHome } from "./styles"
 
 
 export const Home = () => {
-    const [newBooks, setNewBooks] = useState<INewBook[]>([]);
-    const [isLoading, setIsLoading] = useState<boolean>(true);
-    const [errorMessage, setErrorMessage] = useState<string>('')
+    const { error, isLoading, books } = useAppSelector(getNewBooks)
+    const dispatch = useAppDispatch()
 
     useEffect(() => {
-        bookAPI.getNewBooks()
-            .then(newBooksResponse => {
-                setNewBooks(newBooksResponse.books)
-            })
-            .catch(error => {
-                setErrorMessage(error.message)
-            })
-            .finally(() => {
-                setIsLoading(false);
-                setErrorMessage('')
-            });
-    }, [])
+        dispatch(fetchNewBooks())
+    }, [dispatch])
 
     return (
         <StyledHome>
             <Title title='NEW RELEASES BOOKS' />
-            <BooksList newBooks={newBooks} isLoading={isLoading} errorMessage={errorMessage} />
+            <BooksList newBooks={books} isLoading={isLoading} errorMessage={error} />
         </StyledHome>
     )
 }

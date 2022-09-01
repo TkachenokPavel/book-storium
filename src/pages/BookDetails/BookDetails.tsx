@@ -61,7 +61,7 @@ export const BookDetails = () => {
     ]
 
     useEffect(() => {
-        bookAPI.getBook(isbn)
+        bookAPI.getBookDetails(isbn)
             .then(bookResponse => {
                 setBook(bookResponse)
             })
