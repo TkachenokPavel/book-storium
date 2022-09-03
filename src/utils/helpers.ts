@@ -17,3 +17,9 @@ export const getPrice = (price: string): string => {
 export const validateSearchValue = (searchValue: string): string => {
     return searchValue.trim().toLowerCase()
 }
+
+export const getShortBookTitle = (title: string): string => {
+    if (title.length > 40) {
+        return `${title.slice(0, 35)}...`
+    } else return title
+}

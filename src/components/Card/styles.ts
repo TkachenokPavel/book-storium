@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { BODY, BODY2, Color } from '../../ui';
+import { BODY, BODY2, Color, S1 } from '../../ui';
 
 export const StyledCard = styled.li`
   display: flex;
@@ -11,8 +11,8 @@ export const StyledCard = styled.li`
 
   border-radius: 15px;
   background: #F7F7F7;
-  box-shadow:  12px 12px 13px #9c9c9c,
-             -12px -12px 13px #ffffff;
+  box-shadow:  12px 12px 40px #9c9c9c,
+             -12px -12px 40px #ffffff;
 `;
 
 export const Image = styled.img`
@@ -22,11 +22,17 @@ export const Image = styled.img`
 `;
 
 export const Title = styled.h3`
-  ${BODY};
-  line-height: 1;
-  text-align: center;
+  align-self: flex-start;
 
-  padding: 10px;
+  ${S1};
+  text-indent: 15px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.5px;
+  
+  word-break: break-all;
+
+  padding: 10px 20px;
 `;
 
 export const Price = styled.p`
