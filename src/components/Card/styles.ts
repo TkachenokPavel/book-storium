@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { BODY2, Color, S1 } from '../../ui';
+import { BODY, BODY2, Color } from '../../ui';
 
 export const StyledCard = styled.li`
   display: flex;
@@ -24,11 +24,11 @@ export const Image = styled.img`
 export const Title = styled.h3`
   align-self: flex-start;
 
-  ${S1};
+  ${BODY};
   text-indent: 15px;
   font-weight: 700;
   line-height: 1;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.05px;
   
   word-break: break-all;
 

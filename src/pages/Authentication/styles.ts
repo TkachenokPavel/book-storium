@@ -1,13 +1,11 @@
 import styled from 'styled-components';
-import { Color, H2, H3 } from '../../ui';
-import { IFormSwitch } from './Authentication';
-
+import { Color, H3 } from '../../ui';
 
 export const StyledAuthentication = styled.div`
   display: grid;
   place-items: center;
 
-  min-height: 70vh;
+  min-height: 80vh;
 `;
 
 export const Wrapper = styled.div`
@@ -17,7 +15,7 @@ export const Wrapper = styled.div`
   width: 544px;
   padding: 0px 32px 40px;
 
-  border: 1px solid ${Color.SECONDARY};
+  border: 1px solid ${Color.GREY};
 `;
 
 export const SwitchWrapper = styled.div`
