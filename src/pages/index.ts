@@ -5,7 +5,7 @@ import { Favorites } from "./Favorites";
 import { Home } from "./Home";
 import { Reset } from "./Reset";
 import { Search } from "./Search";
-import { SignIn } from "./SignIn";
+import { Authentication } from "./Authentication";
 import { NotFound } from "./NotFound";
 
 export {
@@ -16,6 +16,6 @@ export {
     Home,
     Reset,
     Search,
-    SignIn,
+    Authentication,
     NotFound
 }

@@ -4,13 +4,17 @@ import { Navbar } from "../Navbar";
 import { useWindiwSize } from "../../hooks/useWindowSize";
 import { NavbarMobile } from "../NavbarMobile/NavbarMobile";
 import { Logo } from "../../assets";
+import { Link } from "react-router-dom";
+import { ROUTE } from "../../router/routes";
 
 export const Header = () => {
     const { width } = useWindiwSize();
 
     return (
         <StyledHeader>
-            <Logo />
+            <Link to={ROUTE.HOME}>
+                <Logo />
+            </Link>
             <Search />
             {width && width > 768
                 ? <Navbar />

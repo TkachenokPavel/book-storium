@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { BODY, BODY2, Color, S1 } from '../../ui';
+import { BODY2, Color, S1 } from '../../ui';
 
 export const StyledCard = styled.li`
   display: flex;
