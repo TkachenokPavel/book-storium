@@ -1,6 +1,8 @@
 import { useState } from "react"
+import { ModalSmall } from "../../components"
 import { SignIn } from "../../components/SignIn"
 import { SignUp } from "../../components/SignUp"
+import { useToggle } from "../../hooks/useToggle"
 import { SignInSwitch, SignUpSwitch, StyledAuthentication, SwitchWrapper, Wrapper } from "./styles"
 
 export interface IFormSwitch {
@@ -13,6 +15,7 @@ export const Authentication = () => {
         signIn: true,
         signUp: false
     })
+    const [isModalOpen, setIsModalOpen] = useToggle()
 
     const handleSignInSwitch = () => {
         setFormSwitch({
@@ -26,6 +29,10 @@ export const Authentication = () => {
             signIn: false,
             signUp: true
         })
+    }
+
+    const handleModal = () => {
+        setIsModalOpen()
     }
 
     return (
@@ -44,8 +51,9 @@ export const Authentication = () => {
                     </SignUpSwitch>
                 </SwitchWrapper>
                 {formSwitch.signIn && <SignIn />}
-                {formSwitch.signUp && <SignUp />}
+                {formSwitch.signUp && <SignUp toggleModal={handleModal} isOpen={isModalOpen} />}
             </Wrapper>
+            <ModalSmall isOpen={isModalOpen} handleCloseModal={handleModal} />
         </StyledAuthentication>
     )
 }

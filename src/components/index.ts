@@ -11,6 +11,8 @@ import { NavbarMobile } from "./NavbarMobile";
 import { Title } from "./Title";
 import { Rating } from "./Rating";
 import { BookTabs } from "./BookTabs";
+import { ModalSmall } from "./ModalSmall";
+import { Portal } from "./Portal";
 
 export {
     Header,
@@ -25,5 +27,7 @@ export {
     NavbarMobile,
     Title,
     Rating,
-    BookTabs
+    BookTabs,
+    ModalSmall,
+    Portal
 }

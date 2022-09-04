@@ -5,7 +5,8 @@ import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { removeIsLoading, setError, setIsLoading, setUser } from "../../store/features/authentication/authenticationSlice";
 import { getUser } from "../../store/selectors/authenticationSelector";
 import CircleLoader from "react-spinners/CircleLoader";
-import { CSSProperties } from "react";
+import { CSSProperties, useEffect } from "react";
+import { getFirebaseMessageError } from "../../utils/firebaseError";
 
 export type FormValues = {
     name: string
@@ -18,7 +19,12 @@ const override: CSSProperties = {
     display: "block",
 }
 
-export const SignUp = () => {
+interface IProps {
+    isOpen: boolean
+    toggleModal: () => void
+}
+
+export const SignUp = ({ isOpen, toggleModal }: IProps) => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm<FormValues>({
         mode: 'onSubmit',
         reValidateMode: 'onSubmit',
@@ -36,11 +42,22 @@ export const SignUp = () => {
             .then((userCredential) => {
                 reset()
                 dispatch(removeIsLoading());
+                toggleModal()
             })
             .catch((error) => {
-                dispatch(setError(error.message))
+                dispatch(setError(getFirebaseMessageError(error.code)))
             });
     }
+
+    useEffect(() => {
+        if (isOpen) {
+            let timer = setTimeout(() => toggleModal(), 5000);
+
+            return () => {
+                clearTimeout(timer);
+            };
+        }
+    }, [isOpen, toggleModal]);
 
     return (
         <StyledForm onSubmit={handleSubmit(onSubmit)}>

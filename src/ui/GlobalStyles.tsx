@@ -107,6 +107,7 @@ export const GlobalStyles = createGlobalStyle`
     input[type=button] {width: auto; overflow: visible;}
 
     body {
+        position: relative;
         ${BODY}
     }
 `;
