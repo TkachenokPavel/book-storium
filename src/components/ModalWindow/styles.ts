@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { AiOutlineClose } from 'react-icons/ai'
 import { Color } from '../../ui';
 
-export const StyledModalSmall = styled.div`
+export const StyledModalWindow = styled.div`
   position: absolute;
   z-index: 10;
   right: 30px;

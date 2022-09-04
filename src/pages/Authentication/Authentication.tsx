@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { ModalSmall } from "../../components"
+import { ModalWindow } from "../../components"
 import { SignIn } from "../../components/SignIn"
 import { SignUp } from "../../components/SignUp"
 import { useToggle } from "../../hooks/useToggle"
@@ -53,7 +53,7 @@ export const Authentication = () => {
                 {formSwitch.signIn && <SignIn />}
                 {formSwitch.signUp && <SignUp toggleModal={handleModal} isOpen={isModalOpen} />}
             </Wrapper>
-            <ModalSmall isOpen={isModalOpen} handleCloseModal={handleModal} />
+            <ModalWindow isOpen={isModalOpen} handleCloseModal={handleModal} />
         </StyledAuthentication>
     )
 }

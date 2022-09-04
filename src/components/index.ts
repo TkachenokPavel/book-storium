@@ -11,7 +11,7 @@ import { NavbarMobile } from "./NavbarMobile";
 import { Title } from "./Title";
 import { Rating } from "./Rating";
 import { BookTabs } from "./BookTabs";
-import { ModalSmall } from "./ModalSmall";
+import { ModalWindow } from "./ModalWindow";
 import { Portal } from "./Portal";
 
 export {
@@ -28,6 +28,6 @@ export {
     Title,
     Rating,
     BookTabs,
-    ModalSmall,
+    ModalWindow,
     Portal
 }
