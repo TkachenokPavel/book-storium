@@ -1,77 +1,86 @@
 import { SubmitHandler, useForm } from "react-hook-form";
-import { Button, ConfirmLabel, EmailLabel, InputConfirm, InputEmail, InputName, InputPassword, NameLabel, PasswordLabel, StyledForm } from "./styles";
+import { Button, ConfirmLabel, EmailLabel, ErrorMessage, InputConfirm, InputEmail, InputName, InputPassword, NameLabel, PasswordLabel, StyledForm } from "./styles";
 
 export type FormValues = {
     name: string
     email: string,
-    password: number,
-    passwordConfirm: number
+    password: string,
+    passwordConfirm: string
 }
 
 export const SignUp = () => {
-    const { register, handleSubmit, reset } = useForm<FormValues>();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm<FormValues>({
+        mode: 'onSubmit',
+        reValidateMode: 'onSubmit',
+    });
+
+    const onSubmit: SubmitHandler<FormValues> = ({ name, email, password, passwordConfirm }) => {
+        console.log(name, email, password)
+    }
 
     return (
-        <StyledForm >
+        <StyledForm onSubmit={handleSubmit(onSubmit)}>
             <NameLabel>
                 name
                 <InputName
                     type="text"
                     placeholder='Your name'
                     {...register('name', {
-                        required: true,
-                        maxLength: {
-                            value: 15,
-                            message: 'MaxLength is 15'
-                        }
+                        required: {
+                            value: true,
+                            message: 'Enter your name'
+                        },
                     })}
                 />
             </NameLabel>
+            {errors.name && <ErrorMessage>{errors.name.message}</ErrorMessage>}
+
             <EmailLabel>
                 email
                 <InputEmail
                     type="email"
                     placeholder='Your email'
                     {...register('email', {
-                        required: true,
-                        maxLength: {
-                            value: 15,
-                            message: 'MaxLength is 15'
-                        }
+                        required: {
+                            value: true,
+                            message: 'Enter your email'
+                        },
                     })}
                 />
             </EmailLabel>
+            {errors.email && <ErrorMessage>{errors.email.message}</ErrorMessage>}
+
             <PasswordLabel>
                 password
                 <InputPassword
                     type="password"
                     placeholder='Your password'
                     {...register('password', {
-                        required: true,
-                        valueAsNumber: true,
-                        maxLength: {
-                            value: 5,
-                            message: 'MaxLength is 5'
-                        }
+                        required: {
+                            value: true,
+                            message: 'Enter your password'
+                        },
                     })}
                 />
             </PasswordLabel>
+            {errors.password && <ErrorMessage>{errors.password.message}</ErrorMessage>}
+
             <ConfirmLabel>
                 confirm password
                 <InputConfirm
                     type="password"
                     placeholder='Confirm your password'
                     {...register('passwordConfirm', {
-                        required: true,
-                        valueAsNumber: true,
-                        maxLength: {
-                            value: 5,
-                            message: 'MaxLength is 5'
-                        }
+                        required: {
+                            value: true,
+                            message: 'Confirm your password'
+                        },
                     })}
                 />
             </ConfirmLabel>
-            <Button>sign in</Button>
+            {errors.passwordConfirm && <ErrorMessage>{errors.passwordConfirm.message}</ErrorMessage>}
+
+            <Button type='submit'>sign up</Button>
         </StyledForm>
     )
 }

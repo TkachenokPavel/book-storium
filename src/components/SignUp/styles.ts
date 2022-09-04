@@ -110,3 +110,7 @@ export const ConfirmLabel = styled.label`
   ${BODY2};
   text-transform: capitalize;
 `;
+
+export const ErrorMessage = styled.span`
+  
+`;

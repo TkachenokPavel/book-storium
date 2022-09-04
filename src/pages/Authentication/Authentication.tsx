@@ -15,17 +15,17 @@ export const Authentication = () => {
     })
 
     const handleSignInSwitch = () => {
-        setFormSwitch((actual) => ({
+        setFormSwitch({
             signIn: true,
             signUp: false
-        }))
+        })
     }
 
     const handleSignUpSwitch = () => {
-        setFormSwitch((actual) => ({
+        setFormSwitch({
             signIn: false,
             signUp: true
-        }))
+        })
     }
 
     return (
