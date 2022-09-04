@@ -1,3 +1,3 @@
-import { getAuthor, getPrice, validateSearchValue } from "./helpers";
+import { getAuthor, getPrice, validateSearchValue, getShortBookTitle } from "./helpers";
 
-export { getAuthor, getPrice, validateSearchValue }
+export { getAuthor, getPrice, validateSearchValue, getShortBookTitle }

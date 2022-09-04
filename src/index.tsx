@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import { GlobalStyles } from './ui/GlobalStyles';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
+import "./firebase";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

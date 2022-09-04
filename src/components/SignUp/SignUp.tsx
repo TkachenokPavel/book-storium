@@ -1,5 +1,11 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Button, ConfirmLabel, EmailLabel, ErrorMessage, InputConfirm, InputEmail, InputName, InputPassword, NameLabel, PasswordLabel, StyledForm } from "./styles";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { removeIsLoading, setError, setIsLoading, setUser } from "../../store/features/authentication/authenticationSlice";
+import { getUser } from "../../store/selectors/authenticationSelector";
+import CircleLoader from "react-spinners/CircleLoader";
+import { CSSProperties } from "react";
 
 export type FormValues = {
     name: string
@@ -8,14 +14,32 @@ export type FormValues = {
     passwordConfirm: string
 }
 
+const override: CSSProperties = {
+    display: "block",
+}
+
 export const SignUp = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm<FormValues>({
         mode: 'onSubmit',
         reValidateMode: 'onSubmit',
     });
 
-    const onSubmit: SubmitHandler<FormValues> = ({ name, email, password, passwordConfirm }) => {
-        console.log(name, email, password)
+    const dispatch = useAppDispatch();
+    const { isLoading, error, email } = useAppSelector(getUser)
+
+    const onSubmit: SubmitHandler<FormValues> = ({ email, password }) => {
+        dispatch(setIsLoading());
+
+        const auth = getAuth();
+
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                reset()
+                dispatch(removeIsLoading());
+            })
+            .catch((error) => {
+                dispatch(setError(error.message))
+            });
     }
 
     return (
@@ -79,8 +103,12 @@ export const SignUp = () => {
                 />
             </ConfirmLabel>
             {errors.passwordConfirm && <ErrorMessage>{errors.passwordConfirm.message}</ErrorMessage>}
-
-            <Button type='submit'>sign up</Button>
+            {error && <ErrorMessage>{error}</ErrorMessage>}
+            <Button type='submit'>{
+                isLoading
+                    ? <CircleLoader loading={isLoading} cssOverride={override} size={30} color="white" />
+                    : 'sign up'}
+            </Button>
         </StyledForm>
     )
 }
