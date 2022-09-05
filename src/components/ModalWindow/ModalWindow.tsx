@@ -1,4 +1,3 @@
-import React from 'react'
 import { Portal } from '../Portal'
 import { PortalTarget } from '../Portal/Portal'
 import { CloseButton, StyledModalWindow, Title } from './styles'

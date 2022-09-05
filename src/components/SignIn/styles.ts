@@ -42,6 +42,10 @@ export const InputPassword = styled.input`
 `;
 
 export const Button = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   width: 100%;
   height: 56px;
   margin-top: 40px;

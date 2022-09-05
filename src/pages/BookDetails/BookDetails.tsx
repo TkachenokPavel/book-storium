@@ -8,10 +8,22 @@ import { fetchBookDetails } from '../../store/features/bookDetails/bookDetailsSl
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { getBookDetails } from '../../store/selectors/bookDetailsSelector';
 import { getAuthor, getPrice } from '../../utils';
-import { BookDetailsList, BookImage, CartButton, Description, PriceWrapper, RowWrapper, DetailsTitle, DetailsWrapper, Price, StyledBook, Preview, MoreDetails } from './styles';
+import { BookDetailsList, Image, CartButton, Description, PriceWrapper, RowWrapper, DetailsTitle, DetailsWrapper, Price, StyledBook, Preview, MoreDetails, ImageWrapper } from './styles';
+import { IoMdHeartEmpty, IoMdHeart } from 'react-icons/io'
+import { Color } from '../../ui';
 
 const override: CSSProperties = {
     marginTop: "100px",
+}
+
+const favoriteStyle: CSSProperties = {
+    position: 'absolute',
+    top: '0',
+    right: '0',
+    width: '40px',
+    height: '40px',
+    color: `${Color.LIGHT}`,
+    background: `${Color.PRIMARY}`
 }
 
 export const BookDetails = () => {
@@ -71,7 +83,10 @@ export const BookDetails = () => {
             }} />
             <Title title={title} />
             <DetailsWrapper>
-                <BookImage src={image} />
+                <ImageWrapper>
+                    <Image src={image} />
+                    <IoMdHeartEmpty style={favoriteStyle} />
+                </ImageWrapper>
                 <BookDetailsList>
                     <PriceWrapper>
                         <Price>{getPrice(price)}</Price>

@@ -4,7 +4,7 @@ import { ROUTE } from '../router/routes'
 export const Account = () => {
     return (
         <div>
-            <Link to={ROUTE.HOME}>Home</Link>
+            <Link to={ROUTE.HOME}>Account</Link>
         </div>
     )
 }

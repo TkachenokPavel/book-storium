@@ -18,14 +18,20 @@ export const DetailsWrapper = styled.div`
     width: 100%;
 `;
 
-export const BookImage = styled.img`
-  width: 40%;
+export const ImageWrapper = styled.div`
+    position: relative;
 
-  background-color: ${Color.ORANGE};
+    width: 40%;
 
-  ${Media.MD} {
+    ${Media.MD} {
     width: 100%;
   }
+`;
+
+export const Image = styled.img`
+  width: 100%;
+
+  background-color: ${Color.ORANGE};
 `;
 
 export const BookDetailsList = styled.div`

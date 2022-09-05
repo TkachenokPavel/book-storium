@@ -3,8 +3,11 @@ import { Cart, Favorite, Account } from "../../assets";
 import { NavbarItem } from '../NavbarItem';
 import { ROUTE } from '../../router/routes';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../../hooks/useAuth';
 
 export const Navbar = () => {
+    const isAuth = useAuth();
+
     return (
         <StyledNavbar>
             <NavbarList>
@@ -14,9 +17,13 @@ export const Navbar = () => {
                 <Link to={ROUTE.CART}>
                     <NavbarItem img={<Cart />} key='cart' />
                 </Link>
-                <Link to={ROUTE.AUTHENTICATION}>
-                    <NavbarItem img={<Account />} key='account' />
-                </Link>
+                {isAuth
+                    ? (<Link to={ROUTE.ACCOUNT}>
+                        <NavbarItem img={<Account />} key='account' />
+                    </Link>)
+                    : (<Link to={ROUTE.AUTHENTICATION}>
+                        <NavbarItem img={<Account />} key='account' />
+                    </Link>)}
             </NavbarList>
         </StyledNavbar>
     )

@@ -51,7 +51,9 @@ export const Authentication = () => {
                     </SignUpSwitch>
                 </SwitchWrapper>
                 {formSwitch.signIn && <SignIn />}
-                {formSwitch.signUp && <SignUp toggleModal={handleModal} isOpen={isModalOpen} />}
+                {formSwitch.signUp && <SignUp
+                    toggleModal={handleModal}
+                    isOpen={isModalOpen} />}
             </Wrapper>
             <ModalWindow isOpen={isModalOpen} handleCloseModal={handleModal} />
         </StyledAuthentication>

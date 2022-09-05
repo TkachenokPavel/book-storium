@@ -12,8 +12,8 @@ enum ErrorMessage {
     INVALID_EMAIL = "This email address is invalid",
     USER_NOT_FOUND = "This user is not found",
     INVALID_PASSWORD = "This password is invalid",
-    UNKNOWN_ERROR = "Unknown error occurred while trying to process the request.",
     WRONG_PASSWORD = "This password is invalid",
+    UNKNOWN_ERROR = "Unknown error occurred while trying to process the request.",
 }
 
 export const getFirebaseMessageError = (

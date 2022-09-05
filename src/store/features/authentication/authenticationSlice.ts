@@ -1,13 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-type authenticationState = {
+type userData = {
     email: string | null,
+    created: string | null,
+}
+
+type authenticationState = {
+    user: userData,
     error: null | string,
     isLoading: boolean,
 }
 
 const initialState: authenticationState = {
-    email: null,
+    user: {
+        email: null,
+        created: null,
+    },
     error: null,
     isLoading: false,
 }
@@ -17,27 +25,32 @@ const authenticationSlice = createSlice({
     initialState,
     reducers: {
         setIsLoading(state) {
-            state.email = null;
+            state.user.email = null;
+            state.user.created = null;
             state.error = null;
             state.isLoading = true;
         },
         removeIsLoading(state) {
-            state.email = null;
+            state.user.email = null;
+            state.user.created = null;
             state.error = null;
             state.isLoading = false;
         },
         setUser(state, { payload }) {
-            state.email = payload;
+            state.user.email = payload.email;
+            state.user.created = payload.created;
             state.error = null;
             state.isLoading = false;
         },
         removeUser(state) {
-            state.email = null;
+            state.user.email = null;
+            state.user.created = null;
             state.error = null;
             state.isLoading = false;
         },
         setError(state, { payload }) {
-            state.email = null;
+            state.user.email = null;
+            state.user.created = null;
             state.error = payload;
             state.isLoading = false;
         }

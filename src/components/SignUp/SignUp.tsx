@@ -2,7 +2,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { Button, ConfirmLabel, EmailLabel, ErrorMessage, InputConfirm, InputEmail, InputName, InputPassword, NameLabel, PasswordLabel, StyledForm } from "./styles";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { removeIsLoading, setError, setIsLoading, setUser } from "../../store/features/authentication/authenticationSlice";
+import { removeIsLoading, setError, setIsLoading } from "../../store/features/authentication/authenticationSlice";
 import { getUser } from "../../store/selectors/authenticationSelector";
 import CircleLoader from "react-spinners/CircleLoader";
 import { CSSProperties, useEffect } from "react";
@@ -31,7 +31,7 @@ export const SignUp = ({ isOpen, toggleModal }: IProps) => {
     });
 
     const dispatch = useAppDispatch();
-    const { isLoading, error, email } = useAppSelector(getUser)
+    const { isLoading, error } = useAppSelector(getUser)
 
     const onSubmit: SubmitHandler<FormValues> = ({ email, password }) => {
         dispatch(setIsLoading());
@@ -42,7 +42,7 @@ export const SignUp = ({ isOpen, toggleModal }: IProps) => {
             .then((userCredential) => {
                 reset()
                 dispatch(removeIsLoading());
-                toggleModal()
+                toggleModal();
             })
             .catch((error) => {
                 dispatch(setError(getFirebaseMessageError(error.code)))
