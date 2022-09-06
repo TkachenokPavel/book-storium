@@ -23,3 +23,7 @@ export const getShortBookTitle = (title: string): string => {
         return `${title.slice(0, 35)}...`
     } else return title
 }
+
+export const getPagesCount = (totalPages: string): number => {
+    return Math.ceil(+totalPages / 10)
+}

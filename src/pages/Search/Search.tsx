@@ -5,6 +5,7 @@ import { useAppSelector, useAppDispatch } from "../../store/hooks";
 import { getSearch } from "../../store/selectors/searchSelector";
 import { ControlerWrapper, Next, NextText, Previous, PrevText, StyledSearch } from "./styles";
 import { GrLinkPrevious, GrLinkNext } from 'react-icons/gr'
+import { getPagesCount } from "../../utils/helpers";
 
 export const Search = () => {
     const { searchParams, searchResponse, isLoading, error } = useAppSelector(getSearch);
@@ -17,7 +18,9 @@ export const Search = () => {
     }
 
     const handleNext = () => {
-        if (!!searchParams.page) {
+        if (!!searchParams.page
+            && !!searchResponse.total
+            && getPagesCount(searchResponse.total) > searchParams.page) {
             dispatch(decrementPage(searchParams.page + 1))
         }
     }
