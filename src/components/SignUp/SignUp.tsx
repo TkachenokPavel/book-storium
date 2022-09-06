@@ -109,13 +109,13 @@ export const SignUp = ({ isOpen, toggleModal }: IProps) => {
             <ConfirmLabel>
                 confirm password
                 <InputConfirm
-                    type="password"
+                    type="passwordConfirm"
                     placeholder='Confirm your password'
                     {...register('passwordConfirm', {
                         required: {
                             value: true,
                             message: 'Confirm your password'
-                        },
+                        }
                     })}
                 />
             </ConfirmLabel>
