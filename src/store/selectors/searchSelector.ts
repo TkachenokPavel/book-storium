@@ -1,3 +1,3 @@
 import { RootState } from "../store";
 
-// export const getSearch = (state: RootState) => state.search;
+export const getSearch = (state: RootState) => state.search;

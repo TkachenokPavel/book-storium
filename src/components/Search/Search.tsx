@@ -3,30 +3,39 @@ import { useNavigate } from 'react-router-dom';
 import { useDebounce } from '../../hooks/useDebounce';
 import { useInput } from '../../hooks/useInput';
 import { ROUTE } from '../../router/routes';
-import { useAppDispatch } from '../../store/hooks';
+import { removeSearchValue, setSearchValue } from '../../store/features/search/searchSlice';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { validateSearchValue } from '../../utils';
-import { StyledSearch } from './styles'
+import { Input, SearchButton, StyledSearch } from './styles'
 
 export const Search = () => {
     const searchValue = useInput();
     const debouncedValue = useDebounce(validateSearchValue(searchValue.value), 1000);
     const navigate = useNavigate();
+    const dispatch = useAppDispatch();
 
-    const dispatch = useAppDispatch()
+    const handleSearch = () => {
+        navigate(ROUTE.SEARCH)
+    }
 
     useEffect(() => {
-        // dispatch()
-
         if (debouncedValue) {
-            navigate(ROUTE.SEARCH)
+            dispatch(setSearchValue({
+                searchValue: debouncedValue,
+                page: 2
+            }))
+        } else {
+            dispatch(removeSearchValue())
         }
-    }, [debouncedValue])
+    }, [debouncedValue, dispatch])
 
     return (
-        <StyledSearch
-            type='text'
-            placeholder='Search...'
-            name='search'
-            {...searchValue} />
+        <StyledSearch >
+            <Input type='text'
+                placeholder='Search...'
+                name='search'
+                {...searchValue} />
+            <SearchButton type='button' onClick={handleSearch} />
+        </StyledSearch>
     )
 }

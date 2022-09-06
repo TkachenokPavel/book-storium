@@ -1,20 +1,10 @@
 import axios from 'axios';
-import { IBookDetails, IBookShort } from '../../types/types';
+import { IBookDetails, NewBooksResponse, SearchedBooksResponse } from '../../types/types';
 
 enum BookEndpoint {
     NEW = 'new',
     SEARCH = 'search/',
     DETAIL_BOOK = 'books/'
-}
-
-interface NewBooksResponse {
-    error: string,
-    total: string,
-    books: IBookShort[]
-}
-
-interface SearchedBooksResponse extends NewBooksResponse {
-    page: string
 }
 
 class BookAPI {
@@ -35,8 +25,8 @@ class BookAPI {
         return data;
     };
 
-    public async getSearchedBooks(query: string, page: number = 1) {
-        const { data } = await this.API.get<SearchedBooksResponse>(`${BookEndpoint.SEARCH}/${query}/${page.toString}`)
+    public async getSearchedBooks(query: string | null, page: number | null = 1) {
+        const { data } = await this.API.get<SearchedBooksResponse>(`${BookEndpoint.SEARCH}/${query}/${page?.toString()}`)
 
         return data;
     };
