@@ -42,5 +42,5 @@ export interface SearchedBooksResponse extends NewBooksResponse {
 
 export type SearchParams = {
     searchValue: string | null,
-    page: number | null
+    page?: number | null
 }

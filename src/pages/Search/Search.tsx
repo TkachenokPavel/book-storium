@@ -1,21 +1,54 @@
 import { useEffect } from "react"
-import { fetchSearchedBooks } from "../../store/features/search/searchSlice";
+import { BooksList, Title } from "../../components";
+import { decrementPage, fetchSearchedBooks } from "../../store/features/search/searchSlice";
 import { useAppSelector, useAppDispatch } from "../../store/hooks";
 import { getSearch } from "../../store/selectors/searchSelector";
+import { ControlerWrapper, Next, NextText, Previous, PrevText, StyledSearch } from "./styles";
+import { GrLinkPrevious, GrLinkNext } from 'react-icons/gr'
 
 export const Search = () => {
-    const { searchParams, searchResponse } = useAppSelector(getSearch);
+    const { searchParams, searchResponse, isLoading, error } = useAppSelector(getSearch);
     const dispatch = useAppDispatch();
-    console.log(searchResponse.books)
+
+    const handlePrev = () => {
+        if (!!searchParams.page && searchParams.page > 1) {
+            dispatch(decrementPage(searchParams.page - 1))
+        }
+    }
+
+    const handleNext = () => {
+        if (!!searchParams.page) {
+            dispatch(decrementPage(searchParams.page + 1))
+        }
+    }
 
     useEffect(() => {
-        dispatch(fetchSearchedBooks({
-            searchValue: searchParams.searchValue,
-            page: 2
-        }))
+        if (searchParams.searchValue) {
+            dispatch(fetchSearchedBooks({
+                searchValue: searchParams.searchValue,
+                page: searchParams.page
+            }))
+        }
     }, [dispatch, searchParams])
 
     return (
-        <div>Search</div>
+        <StyledSearch>
+            <Title title={`'${searchParams.searchValue ? searchParams.searchValue : ' '}' search results`} />
+            <BooksList newBooks={searchResponse.books} isLoading={isLoading} errorMessage={error} />
+            <ControlerWrapper>
+                <Previous onClick={handlePrev}>
+                    <GrLinkPrevious style={{
+                        paddingTop: '5px'
+                    }} />
+                    <PrevText>Prev</PrevText>
+                </Previous>
+                <Next onClick={handleNext}>
+                    <NextText>Next</NextText>
+                    <GrLinkNext style={{
+                        paddingTop: '5px'
+                    }} />
+                </Next>
+            </ControlerWrapper>
+        </StyledSearch>
     )
 }

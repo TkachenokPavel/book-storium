@@ -52,6 +52,12 @@ const searchSlice = createSlice({
         removeSearchValue: (state) => {
             state.searchParams.searchValue = null;
             state.searchParams.page = null;
+        },
+        incrementPage: (state, { payload }) => {
+            state.searchParams.page = payload
+        },
+        decrementPage: (state, { payload }) => {
+            state.searchParams.page = payload
         }
     },
     extraReducers(builder) {
@@ -74,6 +80,6 @@ const searchSlice = createSlice({
     },
 })
 
-export const { setSearchValue, removeSearchValue } = searchSlice.actions;
+export const { setSearchValue, removeSearchValue, incrementPage, decrementPage } = searchSlice.actions;
 
 export default searchSlice.reducer;

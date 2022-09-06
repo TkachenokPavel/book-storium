@@ -13,6 +13,7 @@ interface IProps {
 const override: CSSProperties = {
     display: "block",
     marginTop: "100px",
+    marginBottom: "100px",
 }
 
 export const BooksList = ({ newBooks, isLoading, errorMessage }: IProps) => {

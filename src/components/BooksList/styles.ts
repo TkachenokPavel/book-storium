@@ -8,7 +8,7 @@ export const StyledBooksList = styled.ul`
   grid-gap: 30px;
 
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 72px;
 `;
 
 export const ErrorMassage = styled.p`

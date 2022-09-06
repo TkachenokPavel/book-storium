@@ -10,7 +10,7 @@ interface IProps {
 
 export const Card = ({ book: { image, price, title, isbn13 } }: IProps) => {
     return (
-        <Link to={`book/${isbn13}`}>
+        <Link to={`/book/${isbn13}`}>
             <StyledCard id={isbn13}>
                 <Price>{getPrice(price)}</Price>
                 <Image src={image} alt={title} />

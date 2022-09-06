@@ -4,7 +4,7 @@ import { useDebounce } from '../../hooks/useDebounce';
 import { useInput } from '../../hooks/useInput';
 import { ROUTE } from '../../router/routes';
 import { removeSearchValue, setSearchValue } from '../../store/features/search/searchSlice';
-import { useAppDispatch, useAppSelector } from '../../store/hooks';
+import { useAppDispatch } from '../../store/hooks';
 import { validateSearchValue } from '../../utils';
 import { Input, SearchButton, StyledSearch } from './styles'
 
@@ -22,7 +22,7 @@ export const Search = () => {
         if (debouncedValue) {
             dispatch(setSearchValue({
                 searchValue: debouncedValue,
-                page: 2
+                page: 1
             }))
         } else {
             dispatch(removeSearchValue())
