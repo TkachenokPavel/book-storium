@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { AxiosError } from "axios";
 import { bookAPI } from "../../../services";
 import { IBookDetails } from "../../../types/types";
 import { isPendingAction, isRejectedAction } from "../../utils";
@@ -41,7 +42,8 @@ export const fetchBookDetails = createAsyncThunk<
         try {
             return await bookAPI.getBookDetails(isbn)
         } catch (error) {
-            return rejectWithValue('Server error')
+            const axiosError = error as AxiosError
+            return rejectWithValue(axiosError.message)
         }
     }
 )

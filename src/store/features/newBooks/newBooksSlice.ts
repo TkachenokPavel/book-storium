@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { AxiosError } from "axios";
 import { bookAPI } from "../../../services";
 import { IBookShort } from "../../../types/types";
 import { isPendingAction, isRejectedAction } from "../../utils";
@@ -24,7 +25,8 @@ export const fetchNewBooks = createAsyncThunk<
         try {
             return await bookAPI.getNewBooks()
         } catch (error) {
-            return rejectWithValue('Server error')
+            const axiosError = error as AxiosError
+            return rejectWithValue(axiosError.message)
         }
     }
 )
@@ -42,9 +44,9 @@ const newBooksSlice = createSlice({
             state.error = null;
             state.isLoading = true;
         })
-        builder.addMatcher(isRejectedAction, (state, action) => {
+        builder.addMatcher(isRejectedAction, (state, { payload }) => {
             state.isLoading = false;
-            state.error = action.payload
+            state.error = payload
         })
     },
 });
