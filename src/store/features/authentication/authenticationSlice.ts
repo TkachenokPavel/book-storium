@@ -6,13 +6,13 @@ type userData = {
 }
 
 type authenticationState = {
-    user: userData,
+    currentUser: userData,
     error: null | string,
     isLoading: boolean,
 }
 
 const initialState: authenticationState = {
-    user: {
+    currentUser: {
         email: null,
         created: null,
     },
@@ -25,32 +25,32 @@ const authenticationSlice = createSlice({
     initialState,
     reducers: {
         setIsLoading(state) {
-            state.user.email = null;
-            state.user.created = null;
+            state.currentUser.email = null;
+            state.currentUser.created = null;
             state.error = null;
             state.isLoading = true;
         },
         removeIsLoading(state) {
-            state.user.email = null;
-            state.user.created = null;
+            state.currentUser.email = null;
+            state.currentUser.created = null;
             state.error = null;
             state.isLoading = false;
         },
         setUser(state, { payload }) {
-            state.user.email = payload.email;
-            state.user.created = payload.created;
+            state.currentUser.email = payload.email;
+            state.currentUser.created = payload.created;
             state.error = null;
             state.isLoading = false;
         },
         removeUser(state) {
-            state.user.email = null;
-            state.user.created = null;
+            state.currentUser.email = null;
+            state.currentUser.created = null;
             state.error = null;
             state.isLoading = false;
         },
         setError(state, { payload }) {
-            state.user.email = null;
-            state.user.created = null;
+            state.currentUser.email = null;
+            state.currentUser.created = null;
             state.error = payload;
             state.isLoading = false;
         }

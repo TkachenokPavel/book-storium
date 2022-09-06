@@ -47,7 +47,7 @@ export const S1 = css`
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 21px;
   letter-spacing: 0.05em;
 
   color: ${Color.PRIMARY};
@@ -58,7 +58,7 @@ export const BODY = css`
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
-  line-height: 32px;
+  line-height: 24px;
 
   color: ${Color.PRIMARY};
 `;

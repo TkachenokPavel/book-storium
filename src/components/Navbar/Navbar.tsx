@@ -3,11 +3,15 @@ import { Cart, Favorite, Account } from "../../assets";
 import { NavbarItem } from '../NavbarItem';
 import { ROUTE } from '../../router/routes';
 import { Link } from 'react-router-dom';
+import { useAppSelector } from '../../store/hooks';
+import { getUser } from '../../store/selectors/authenticationSelector';
 import { useAuth } from '../../hooks/useAuth';
+import { useEffect } from 'react';
+
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { getAuth } from 'firebase/auth';
 
 export const Navbar = () => {
-    const isAuth = useAuth();
-
     return (
         <StyledNavbar>
             <NavbarList>
@@ -17,13 +21,9 @@ export const Navbar = () => {
                 <Link to={ROUTE.CART}>
                     <NavbarItem img={<Cart />} key='cart' />
                 </Link>
-                {isAuth
-                    ? (<Link to={ROUTE.ACCOUNT}>
-                        <NavbarItem img={<Account />} key='account' />
-                    </Link>)
-                    : (<Link to={ROUTE.AUTHENTICATION}>
-                        <NavbarItem img={<Account />} key='account' />
-                    </Link>)}
+                <Link to={ROUTE.ACCOUNT}>
+                    <NavbarItem img={<Account />} key='account' />
+                </Link>
             </NavbarList>
         </StyledNavbar>
     )

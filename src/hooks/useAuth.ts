@@ -2,7 +2,7 @@ import { useAppSelector } from "../store/hooks";
 import { getUser } from "../store/selectors/authenticationSelector";
 
 export const useAuth = (): boolean => {
-    const { user } = useAppSelector(getUser)
+    const { currentUser } = useAppSelector(getUser)
 
-    return user.email ? true : false
+    return !!currentUser.email
 };

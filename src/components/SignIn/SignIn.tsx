@@ -32,7 +32,6 @@ export const SignIn = () => {
 
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                console.log(userCredential)
                 dispatch(setUser({
                     email: userCredential.user.email,
                     created: userCredential.user.metadata.creationTime?.slice(5)
