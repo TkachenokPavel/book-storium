@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { BODY, Color } from '../../ui';
+import { BODY, Color, H3 } from '../../ui';
 
 export const StyledSearch = styled.section`
   display: flex;
@@ -49,4 +49,10 @@ export const PrevText = styled.span`
 
 export const NextText = styled.span`
   margin-right: 30px;
+`;
+
+export const EmptyList = styled.h3`
+  margin: 30px 0;
+
+  ${H3};
 `;

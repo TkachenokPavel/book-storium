@@ -25,7 +25,7 @@ class BookAPI {
         return data;
     };
 
-    public async getSearchedBooks(query: string | null, page: number | null = 1) {
+    public async getSearchedBooks(query: string | null, page: string | null = '1') {
         const { data } = await this.API.get<SearchedBooksResponse>(`${BookEndpoint.SEARCH}/${query}/${page}`)
 
         return data;

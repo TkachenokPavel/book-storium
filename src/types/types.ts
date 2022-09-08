@@ -40,7 +40,3 @@ export interface SearchedBooksResponse extends NewBooksResponse {
     page: string | null
 }
 
-export type SearchParams = {
-    searchValue: string | null,
-    page?: number | null
-}

@@ -1,43 +1,55 @@
 import { useEffect } from "react"
 import { BooksList, Title } from "../../components";
-import { decrementPage, fetchSearchedBooks } from "../../store/features/search/searchSlice";
+import { fetchSearchedBooks } from "../../store/features/search/searchSlice";
 import { useAppSelector, useAppDispatch } from "../../store/hooks";
 import { getSearch } from "../../store/selectors/searchSelector";
-import { ControlerWrapper, Next, NextText, Previous, PrevText, StyledSearch } from "./styles";
+import { ControlerWrapper, EmptyList, Next, NextText, Previous, PrevText, StyledSearch } from "./styles";
 import { GrLinkPrevious, GrLinkNext } from 'react-icons/gr'
 import { getPagesCount } from "../../utils/helpers";
+import { useNavigate, useParams } from "react-router-dom";
 
 export const Search = () => {
-    const { searchParams, searchResponse, isLoading, error } = useAppSelector(getSearch);
+    const { searchValue, searchResponse, isLoading, error } = useAppSelector(getSearch);
     const dispatch = useAppDispatch();
+    const { page = '1' } = useParams();
+    const navigate = useNavigate();
 
     const handlePrev = () => {
-        if (!!searchParams.page && searchParams.page > 1) {
-            dispatch(decrementPage(searchParams.page - 1))
-        }
-    }
+        if (searchValue && +page > 1) {
+            navigate(`/search/${+page - 1}`)
 
-    const handleNext = () => {
-        if (!!searchParams.page
-            && !!searchResponse.total
-            && getPagesCount(searchResponse.total) > searchParams.page) {
-            dispatch(decrementPage(searchParams.page + 1))
-        }
-    }
-
-    useEffect(() => {
-        if (searchParams.searchValue) {
             dispatch(fetchSearchedBooks({
-                searchValue: searchParams.searchValue,
-                page: searchParams.page
+                searchValue: searchValue,
+                page: (+page - 1).toString()
             }))
         }
-    }, [dispatch, searchParams])
+    };
+
+    const handleNext = () => {
+        if (searchValue && !!searchResponse.total && getPagesCount(searchResponse.total) > +page) {
+            navigate(`/search/${+page + 1}`)
+
+            dispatch(fetchSearchedBooks({
+                searchValue: searchValue,
+                page: (+page + 1).toString()
+            }))
+        }
+    };
+
+    useEffect(() => {
+        if (searchValue) {
+            dispatch(fetchSearchedBooks({
+                searchValue: searchValue,
+                page: '1'
+            }))
+        }
+    }, [dispatch, searchValue]);
 
     return (
         <StyledSearch>
-            <Title title={`'${searchParams.searchValue ? searchParams.searchValue : ' '}' search results`} />
-            <BooksList newBooks={searchResponse.books} isLoading={isLoading} errorMessage={error} />
+            <Title title={`'${searchValue ? searchValue : ' '}' search results`} />
+            {searchValue ? <BooksList newBooks={searchResponse.books} isLoading={isLoading} errorMessage={error} />
+                : <EmptyList>No results were found for your search</EmptyList>}
             <ControlerWrapper>
                 <Previous onClick={handlePrev}>
                     <GrLinkPrevious style={{

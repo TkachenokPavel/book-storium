@@ -1,21 +1,23 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { AxiosError } from "axios";
 import { bookAPI } from "../../../services";
-import { SearchedBooksResponse, SearchParams } from "../../../types/types";
+import { SearchedBooksResponse } from "../../../types/types";
 import { isPendingAction, isRejectedAction } from "../../utils";
 
 type SearchState = {
-    searchParams: SearchParams,
+    searchValue: string | null,
     searchResponse: SearchedBooksResponse,
     error: string | null,
     isLoading: boolean,
 }
 
+type SearchParams = {
+    searchValue: string | null,
+    page?: string | null
+}
+
 const initialState: SearchState = {
-    searchParams: {
-        searchValue: null,
-        page: null
-    },
+    searchValue: null,
     searchResponse: {
         error: null,
         total: null,
@@ -46,19 +48,11 @@ const searchSlice = createSlice({
     initialState,
     reducers: {
         setSearchValue: (state, { payload }) => {
-            state.searchParams.searchValue = payload.searchValue;
-            state.searchParams.page = payload.page;
+            state.searchValue = payload;
         },
         removeSearchValue: (state) => {
-            state.searchParams.searchValue = null;
-            state.searchParams.page = null;
+            state.searchValue = null;
         },
-        incrementPage: (state, { payload }) => {
-            state.searchParams.page = payload
-        },
-        decrementPage: (state, { payload }) => {
-            state.searchParams.page = payload
-        }
     },
     extraReducers(builder) {
         builder.addCase(fetchSearchedBooks.fulfilled, (state, { payload }) => {
@@ -80,6 +74,6 @@ const searchSlice = createSlice({
     },
 })
 
-export const { setSearchValue, removeSearchValue, incrementPage, decrementPage } = searchSlice.actions;
+export const { setSearchValue, removeSearchValue, } = searchSlice.actions;
 
 export default searchSlice.reducer;
