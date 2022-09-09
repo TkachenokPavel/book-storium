@@ -2,28 +2,17 @@ import { CSSProperties, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
 import CircleLoader from 'react-spinners/CircleLoader';
 import { ArrowBack } from '../../assets'
-import { BookTabs, Rating, Title } from '../../components';
+import { BookTabs, FavoriteButton, Rating, Title } from '../../components';
 import { ErrorMassage } from '../../components/BooksList/styles';
 import { fetchBookDetails } from '../../store/features/bookDetails/bookDetailsSlice';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { getBookDetails } from '../../store/selectors/bookDetailsSelector';
 import { getAuthor, getPrice } from '../../utils';
 import { BookDetailsList, Image, CartButton, Description, PriceWrapper, RowWrapper, DetailsTitle, DetailsWrapper, Price, StyledBook, Preview, MoreDetails, ImageWrapper } from './styles';
-import { IoMdHeartEmpty, IoMdHeart } from 'react-icons/io'
-import { Color } from '../../ui';
+
 
 const override: CSSProperties = {
     marginTop: "100px",
-}
-
-const favoriteStyle: CSSProperties = {
-    position: 'absolute',
-    top: '0',
-    right: '0',
-    width: '40px',
-    height: '40px',
-    color: `${Color.LIGHT}`,
-    background: `${Color.PRIMARY}`
 }
 
 export const BookDetails = () => {
@@ -32,33 +21,33 @@ export const BookDetails = () => {
     const [isMoreDetails, setIsMoreDetails] = useState<boolean>(false);
 
     const dispatch = useAppDispatch();
-    const { book, error, isLoading } = useAppSelector(getBookDetails)
+    const { book, error, isLoading } = useAppSelector(getBookDetails);
 
     const { authors, image, isbn13, language, pages, pdf, price, publisher, rating, title, year } = book;
 
     const handleBack = () => {
         navigate(-1);
-    }
+    };
 
     const handleDetails = () => {
         setIsMoreDetails(true)
-    }
+    };
 
     const detailedDescription = [
         ['Authors', getAuthor(authors)],
         ['Publisher', publisher],
         ['Language', language],
-    ]
+    ];
 
     const moreDeatiledDescription = [
         ['Year', year],
         ['Pages', pages],
         ['isbn13', isbn13],
-    ]
+    ];
 
     useEffect(() => {
         dispatch(fetchBookDetails(isbn))
-    }, [isbn, dispatch])
+    }, [isbn, dispatch]);
 
     if (isLoading) {
         return (
@@ -85,7 +74,7 @@ export const BookDetails = () => {
             <DetailsWrapper>
                 <ImageWrapper>
                     <Image src={image} />
-                    <IoMdHeartEmpty style={favoriteStyle} />
+                    <FavoriteButton book={book} />
                 </ImageWrapper>
                 <BookDetailsList>
                     <PriceWrapper>

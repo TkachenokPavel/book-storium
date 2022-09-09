@@ -11,7 +11,7 @@ export const ControlerWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20%;
+  gap: 10%;
 
   width: 100%;
   margin-bottom: 72px;
@@ -55,4 +55,10 @@ export const EmptyList = styled.h3`
   margin: 30px 0;
 
   ${H3};
+`;
+
+export const PageCounter = styled.p`
+  ${BODY};
+  font-size: 18px;
+  color: ${Color.PRIMARY};
 `;

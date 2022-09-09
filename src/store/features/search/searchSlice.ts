@@ -50,8 +50,14 @@ const searchSlice = createSlice({
         setSearchValue: (state, { payload }) => {
             state.searchValue = payload;
         },
-        removeSearchValue: (state) => {
+        removeState: (state) => {
             state.searchValue = null;
+            state.isLoading = false;
+            state.error = null;
+            state.searchResponse.books = [];
+            state.searchResponse.error = null;
+            state.searchResponse.page = null;
+            state.searchResponse.total = null;
         },
     },
     extraReducers(builder) {
@@ -74,6 +80,6 @@ const searchSlice = createSlice({
     },
 })
 
-export const { setSearchValue, removeSearchValue, } = searchSlice.actions;
+export const { setSearchValue, removeState } = searchSlice.actions;
 
 export default searchSlice.reducer;

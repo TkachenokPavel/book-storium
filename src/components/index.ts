@@ -13,6 +13,7 @@ import { Rating } from "./Rating";
 import { BookTabs } from "./BookTabs";
 import { ModalWindow } from "./ModalWindow";
 import { Portal } from "./Portal";
+import { FavoriteButton } from "./FavoriteButton";
 
 export {
     Header,
@@ -29,5 +30,6 @@ export {
     Rating,
     BookTabs,
     ModalWindow,
-    Portal
+    Portal,
+    FavoriteButton
 }

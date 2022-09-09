@@ -3,7 +3,7 @@ import { BooksList, Title } from "../../components";
 import { fetchSearchedBooks } from "../../store/features/search/searchSlice";
 import { useAppSelector, useAppDispatch } from "../../store/hooks";
 import { getSearch } from "../../store/selectors/searchSelector";
-import { ControlerWrapper, EmptyList, Next, NextText, Previous, PrevText, StyledSearch } from "./styles";
+import { ControlerWrapper, EmptyList, Next, NextText, PageCounter, Previous, PrevText, StyledSearch } from "./styles";
 import { GrLinkPrevious, GrLinkNext } from 'react-icons/gr'
 import { getPagesCount } from "../../utils/helpers";
 import { useNavigate, useParams } from "react-router-dom";
@@ -19,7 +19,7 @@ export const Search = () => {
             navigate(`/search/${+page - 1}`)
 
             dispatch(fetchSearchedBooks({
-                searchValue: searchValue,
+                searchValue,
                 page: (+page - 1).toString()
             }))
         }
@@ -30,7 +30,7 @@ export const Search = () => {
             navigate(`/search/${+page + 1}`)
 
             dispatch(fetchSearchedBooks({
-                searchValue: searchValue,
+                searchValue,
                 page: (+page + 1).toString()
             }))
         }
@@ -39,11 +39,11 @@ export const Search = () => {
     useEffect(() => {
         if (searchValue) {
             dispatch(fetchSearchedBooks({
-                searchValue: searchValue,
-                page: '1'
+                searchValue,
+                page
             }))
         }
-    }, [dispatch, searchValue]);
+    }, [dispatch, searchValue, page]);
 
     return (
         <StyledSearch>
@@ -57,6 +57,9 @@ export const Search = () => {
                     }} />
                     <PrevText>Prev</PrevText>
                 </Previous>
+                {searchResponse.total
+                    ? <PageCounter>Page {page} of {getPagesCount(searchResponse.total)}</PageCounter>
+                    : null}
                 <Next onClick={handleNext}>
                     <NextText>Next</NextText>
                     <GrLinkNext style={{

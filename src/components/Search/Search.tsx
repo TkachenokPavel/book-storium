@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDebounce } from '../../hooks/useDebounce';
 import { useInput } from '../../hooks/useInput';
-import { removeSearchValue, setSearchValue } from '../../store/features/search/searchSlice';
+import { removeState, setSearchValue } from '../../store/features/search/searchSlice';
 import { useAppDispatch } from '../../store/hooks';
 import { validateSearchValue } from '../../utils';
 import { Input, SearchButton, StyledSearch } from './styles'
@@ -21,7 +21,7 @@ export const Search = () => {
         if (debouncedValue) {
             dispatch(setSearchValue(debouncedValue))
         } else {
-            dispatch(removeSearchValue())
+            dispatch(removeState())
         }
     }, [debouncedValue, dispatch])
 

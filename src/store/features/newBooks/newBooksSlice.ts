@@ -28,8 +28,7 @@ export const fetchNewBooks = createAsyncThunk<
             const axiosError = error as AxiosError
             return rejectWithValue(axiosError.message)
         }
-    }
-)
+    })
 
 const newBooksSlice = createSlice({
     name: 'newBooks',
