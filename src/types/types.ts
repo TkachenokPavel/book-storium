@@ -26,17 +26,21 @@ export interface IBookDetails {
     year: string,
 }
 
+export interface ICartItem extends IBookDetails {
+    amount: number
+}
+
 export interface IBookFormat {
     [key: string]: string
 }
 
-export interface NewBooksResponse {
+export interface INewBooksResponse {
     error: string | null,
     total: string | null,
     books: IBookShort[]
 }
 
-export interface SearchedBooksResponse extends NewBooksResponse {
+export interface ISearchedBooksResponse extends INewBooksResponse {
     page: string | null
 }
 

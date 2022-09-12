@@ -27,3 +27,11 @@ export const getShortBookTitle = (title: string): string => {
 export const getPagesCount = (totalPages: string): number => {
     return Math.ceil(+totalPages / 10)
 }
+
+export const getPriceAsNumber = (price: string): number => {
+    if (price === '$0.00') {
+        return 0
+    } else {
+        return +price.slice(1)
+    }
+}

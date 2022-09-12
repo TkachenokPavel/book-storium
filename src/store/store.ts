@@ -4,6 +4,7 @@ import newBooksReducer from "./features/newBooks/newBooksSlice";
 import bookDetailsReducer from "./features/bookDetails/bookDetailsSlice";
 import authenticationReducer from "./features/authentication/authenticationSlice";
 import favoriteReducer from "./features/favorite/favoriteSlice";
+import cartReducer from "./features/cart/cartSlice";
 
 const store = configureStore({
     reducer: {
@@ -12,6 +13,7 @@ const store = configureStore({
         search: searchReducer,
         authentication: authenticationReducer,
         favorite: favoriteReducer,
+        cart: cartReducer,
     }
 })
 

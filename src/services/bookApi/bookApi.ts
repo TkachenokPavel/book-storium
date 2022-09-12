@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { IBookDetails, NewBooksResponse, SearchedBooksResponse } from '../../types/types';
+import { IBookDetails, INewBooksResponse, ISearchedBooksResponse } from '../../types/types';
 
 enum BookEndpoint {
     NEW = 'new',
@@ -14,7 +14,7 @@ class BookAPI {
     });
 
     public async getNewBooks() {
-        const { data } = await this.API.get<NewBooksResponse>(BookEndpoint.NEW);
+        const { data } = await this.API.get<INewBooksResponse>(BookEndpoint.NEW);
 
         return data.books
     };
@@ -26,7 +26,7 @@ class BookAPI {
     };
 
     public async getSearchedBooks(query: string | null, page: string | null = '1') {
-        const { data } = await this.API.get<SearchedBooksResponse>(`${BookEndpoint.SEARCH}/${query}/${page}`)
+        const { data } = await this.API.get<ISearchedBooksResponse>(`${BookEndpoint.SEARCH}/${query}/${page}`)
 
         return data;
     };

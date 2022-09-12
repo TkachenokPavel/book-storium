@@ -1,12 +1,12 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { AxiosError } from "axios";
 import { bookAPI } from "../../../services";
-import { SearchedBooksResponse } from "../../../types/types";
+import { ISearchedBooksResponse } from "../../../types/types";
 import { isPendingAction, isRejectedAction } from "../../utils";
 
 type SearchState = {
     searchValue: string | null,
-    searchResponse: SearchedBooksResponse,
+    searchResponse: ISearchedBooksResponse,
     error: string | null,
     isLoading: boolean,
 }
@@ -29,7 +29,7 @@ const initialState: SearchState = {
 };
 
 export const fetchSearchedBooks = createAsyncThunk<
-    SearchedBooksResponse,
+    ISearchedBooksResponse,
     SearchParams,
     { rejectValue: string }
 >('search/fetchSearchedBooks',

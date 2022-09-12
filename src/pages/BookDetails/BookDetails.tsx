@@ -5,6 +5,7 @@ import { ArrowBack } from '../../assets'
 import { BookTabs, FavoriteButton, Rating, Title } from '../../components';
 import { ErrorMassage } from '../../components/BooksList/styles';
 import { fetchBookDetails } from '../../store/features/bookDetails/bookDetailsSlice';
+import { addItem, calculateTotals } from '../../store/features/cart/cartSlice';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { getBookDetails } from '../../store/selectors/bookDetailsSelector';
 import { getAuthor, getPrice } from '../../utils';
@@ -38,6 +39,11 @@ export const BookDetails = () => {
     const handleDetails = () => {
         setIsMoreDetails(true)
     };
+
+    const handleCartButton = () => {
+        dispatch(addItem(book));
+        dispatch(calculateTotals());
+    }
 
     const detailedDescription = [
         ['Authors', getAuthor(authors)],
@@ -104,7 +110,7 @@ export const BookDetails = () => {
                         })
                         : <MoreDetails onClick={handleDetails}>More details</MoreDetails>}
 
-                    <CartButton type='button'>add to cart</CartButton>
+                    <CartButton type='button' onClick={handleCartButton}>add to cart</CartButton>
 
                     {pdf && <Preview href={Object.values(pdf)[0]}>Preview book</Preview>}
 
