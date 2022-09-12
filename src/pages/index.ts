@@ -17,5 +17,5 @@ export {
     Reset,
     Search,
     Authentication,
-    NotFound
+    NotFound,
 }

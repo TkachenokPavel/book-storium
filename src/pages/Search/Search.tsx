@@ -48,7 +48,8 @@ export const Search = () => {
     return (
         <StyledSearch>
             <Title title={`'${searchValue ? searchValue : ' '}' search results`} />
-            {searchValue ? <BooksList newBooks={searchResponse.books} isLoading={isLoading} errorMessage={error} />
+            {searchResponse.total !== '0'
+                ? <BooksList newBooks={searchResponse.books} isLoading={isLoading} errorMessage={error} />
                 : <EmptyList>No results were found for your search</EmptyList>}
             <ControlerWrapper>
                 <Previous onClick={handlePrev}>

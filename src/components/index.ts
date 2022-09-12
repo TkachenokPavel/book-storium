@@ -14,6 +14,7 @@ import { BookTabs } from "./BookTabs";
 import { ModalWindow } from "./ModalWindow";
 import { Portal } from "./Portal";
 import { FavoriteButton } from "./FavoriteButton";
+import { FavoriteItem } from "./FavoriteItem";
 
 export {
     Header,
@@ -31,5 +32,6 @@ export {
     BookTabs,
     ModalWindow,
     Portal,
-    FavoriteButton
+    FavoriteButton,
+    FavoriteItem
 }

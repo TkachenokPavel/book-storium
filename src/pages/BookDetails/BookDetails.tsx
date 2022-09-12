@@ -73,7 +73,7 @@ export const BookDetails = () => {
             <Title title={title} />
             <DetailsWrapper>
                 <ImageWrapper>
-                    <Image src={image} />
+                    <Image src={image} alt={title} />
                     <FavoriteButton book={book} />
                 </ImageWrapper>
                 <BookDetailsList>
