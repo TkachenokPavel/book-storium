@@ -15,6 +15,7 @@ import { ModalWindow } from "./ModalWindow";
 import { Portal } from "./Portal";
 import { FavoriteButton } from "./FavoriteButton";
 import { FavoriteItem } from "./FavoriteItem";
+import { CartItem } from "./CartItem";
 
 export {
     Header,
@@ -33,5 +34,6 @@ export {
     ModalWindow,
     Portal,
     FavoriteButton,
-    FavoriteItem
+    FavoriteItem,
+    CartItem
 }

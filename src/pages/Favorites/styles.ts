@@ -23,5 +23,6 @@ export const FavoritesList = styled.ul`
 `;
 
 export const EmptyFavorites = styled.h3`
-  ${H2}
+  ${H2};
+  font-family: 'Bebas Neue', cursive;
 `;

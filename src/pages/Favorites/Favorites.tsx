@@ -27,7 +27,7 @@ export const Favorites = () => {
             <FavoritesList>
                 {favorites.length > 0
                     ? favorites.map(favorite => {
-                        return <FavoriteItem favorite={favorite} />
+                        return <FavoriteItem favorite={favorite} key={favorite.isbn13} />
                     })
                     : <EmptyFavorites>Favorites list is empty</EmptyFavorites>
                 }

@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
-import { StyledCart } from './styles';
+import { CartList, ConfirmButton, ConfirmWrapper, EmptyCart, StyledCart, Total, TotalPrice, TotalWrapper } from './styles';
 import { ArrowBack } from "../../assets";
 import { CSSProperties, useEffect } from 'react';
-import { Title } from '../../components';
+import { CartItem, Title } from '../../components';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { calculateTotals } from '../../store/features/cart/cartSlice';
 import { getCart } from '../../store/selectors/cartSelector';
@@ -30,6 +30,22 @@ export const Cart = () => {
         <StyledCart>
             <ArrowBack onClick={handleBack} style={arrowStyles} />
             <Title title='your cart' />
+            <CartList>
+                {cartItems.length > 0
+                    ? (<>
+                        {cartItems.map(cartItem => {
+                            return <CartItem cartItem={cartItem} key={cartItem.isbn13} />
+                        })}
+                        <ConfirmWrapper>
+                            <TotalWrapper>
+                                <Total>Total:</Total>
+                                <TotalPrice>{total}</TotalPrice>
+                            </TotalWrapper>
+                            <ConfirmButton>check out</ConfirmButton>
+                        </ConfirmWrapper>
+                    </>)
+                    : <EmptyCart>Your cart is empty</EmptyCart>}
+            </CartList>
         </StyledCart>
     )
 }
