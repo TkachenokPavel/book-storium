@@ -13,4 +13,5 @@ export const StyledFavoriteButton = styled.button`
   width: 50px;
   height: 50px;
   background: ${Color.PRIMARY};
+  border: none;
 `;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { H2, H3 } from '../../ui';
+import { H2, Media } from '../../ui';
 
 export const StyledFavorites = styled.section`
   display: flex;
@@ -15,6 +15,11 @@ export const FavoritesList = styled.ul`
   width: 100%;
   margin-top: 24px;
   margin-bottom: 48px;
+
+  ${Media.MD} {
+    gap: 32px;
+    margin-top: 0;
+  }
 `;
 
 export const EmptyFavorites = styled.h3`

@@ -1,5 +1,5 @@
 import { IBookDetails } from '../../types/types'
-import { getPrice } from '../../utils';
+import { getAuthor, getPrice } from '../../utils';
 import { Rating } from '../Rating';
 import { StyledItem, Image, Authors, DetailsWrapper, PriceAndRating, Title, Price, ButtonRemove, Separator } from './styles';
 import { IoMdHeart } from 'react-icons/io'
@@ -8,6 +8,8 @@ import { Color } from '../../ui';
 import { useAppDispatch } from '../../store/hooks';
 import { removeItem } from '../../store/features/favorite/favoriteSlice';
 import { Link } from 'react-router-dom';
+import { useWindiwSize } from '../../hooks/useWindowSize';
+import { FavoriteButton } from '../FavoriteButton';
 
 interface IProps {
     favorite: IBookDetails
@@ -20,7 +22,8 @@ const favoriteIconStyles: CSSProperties = {
 }
 
 export const FavoriteItem = ({ favorite }: IProps) => {
-    const dispatch = useAppDispatch()
+    const dispatch = useAppDispatch();
+    const { width } = useWindiwSize();
 
     const { image, title, authors, rating, price, year, isbn13 } = favorite;
 
@@ -38,15 +41,18 @@ export const FavoriteItem = ({ favorite }: IProps) => {
                     <Link to={`/book/${isbn13}`}>
                         <Title>{title}</Title>
                     </Link>
-                    <Authors>{`by ${authors}, ${year}`}</Authors>
+                    <Authors>{`by ${getAuthor(authors)}, ${year}`}</Authors>
                     <PriceAndRating>
                         <Price>{getPrice(price)}</Price>
                         <Rating rating={rating} />
                     </PriceAndRating>
                 </DetailsWrapper>
-                <ButtonRemove type='button' onClick={handleRemove}>
-                    <IoMdHeart style={favoriteIconStyles} />
-                </ButtonRemove>
+                {width && width > 576
+                    ? <ButtonRemove type='button' onClick={handleRemove}>
+                        <IoMdHeart style={favoriteIconStyles} />
+                    </ButtonRemove>
+                    : <FavoriteButton book={favorite} />
+                }
             </StyledItem>
             <Separator />
         </>
