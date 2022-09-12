@@ -15,6 +15,12 @@ const override: CSSProperties = {
     marginTop: "100px",
 }
 
+const arrowStyles: CSSProperties = {
+    cursor: 'pointer',
+    alignSelf: 'self-start',
+    margin: "20px 0",
+}
+
 export const BookDetails = () => {
     const navigate = useNavigate();
     const { isbn = '' } = useParams();
@@ -65,11 +71,7 @@ export const BookDetails = () => {
 
     return (
         <StyledBook>
-            <ArrowBack onClick={handleBack} style={{
-                cursor: 'pointer',
-                alignSelf: 'self-start',
-                margin: "20px 0",
-            }} />
+            <ArrowBack onClick={handleBack} style={arrowStyles} />
             <Title title={title} />
             <DetailsWrapper>
                 <ImageWrapper>
