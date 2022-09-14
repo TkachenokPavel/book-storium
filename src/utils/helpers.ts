@@ -35,3 +35,7 @@ export const getPriceAsNumber = (price: string): number => {
     return +price.slice(1);
   }
 };
+
+export const getItemTotalPrice = (price: string, amount: number): string => {
+  return `$${(getPriceAsNumber(price) * amount).toFixed(2)}`;
+};

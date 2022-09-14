@@ -43,12 +43,12 @@ export const Cart = () => {
         {cartItems.length > 0 ? (
           <>
             {cartItems.map((cartItem) => {
-              return <CartItem cartItem={cartItem} key={cartItem.isbn13} />;
+              return <CartItem cartItemIsbn={cartItem.isbn13} key={cartItem.isbn13} />;
             })}
             <ConfirmWrapper>
               <TotalWrapper>
                 <Total>Total:</Total>
-                <TotalPrice>{total}</TotalPrice>
+                <TotalPrice>{`$${total?.toFixed(2)}`}</TotalPrice>
               </TotalWrapper>
               <ConfirmButton>check out</ConfirmButton>
             </ConfirmWrapper>

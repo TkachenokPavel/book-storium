@@ -37,6 +37,10 @@ export const ConfirmWrapper = styled.div`
   align-self: flex-end;
 
   width: 330px;
+
+  ${Media.SM} {
+    width: 100%;
+  } ;
 `;
 
 export const TotalWrapper = styled.div`
@@ -66,4 +70,9 @@ export const ConfirmButton = styled.button`
   text-transform: uppercase;
 
   background: ${Color.PRIMARY};
+
+  ${Media.SM} {
+    padding: 7px;
+    font-size: 18px;
+  } ;
 `;

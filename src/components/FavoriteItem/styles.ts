@@ -20,7 +20,7 @@ export const StyledItem = styled.li`
     height: auto;
   }
 
-  & a:first-of-type {
+  & > a {
     flex-shrink: 0;
     width: 170px;
 

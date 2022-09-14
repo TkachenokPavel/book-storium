@@ -6,7 +6,7 @@ import { CSSProperties } from "styled-components";
 import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { getFavorite } from "../../store/selectors/favoriteSelector";
-import { removeItem, addItem } from "../../store";
+import { removeFavorite, addFavorite } from "../../store";
 
 interface IProps {
   book: IBookDetails;
@@ -25,10 +25,10 @@ export const FavoriteButton = ({ book }: IProps) => {
 
   const handleButton = () => {
     if (isFavorite) {
-      dispatch(removeItem(book.isbn13));
+      dispatch(removeFavorite(book.isbn13));
       setIsFavorite(false);
     } else {
-      dispatch(addItem(book));
+      dispatch(addFavorite(book));
       setIsFavorite(true);
     }
   };

@@ -16,6 +16,7 @@ import { Portal } from "./Portal";
 import { FavoriteButton } from "./FavoriteButton";
 import { FavoriteItem } from "./FavoriteItem";
 import { CartItem } from "./CartItem";
+import { Counter } from "./Counter";
 
 export {
   Header,
@@ -36,4 +37,5 @@ export {
   FavoriteButton,
   FavoriteItem,
   CartItem,
+  Counter,
 };

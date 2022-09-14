@@ -30,7 +30,7 @@ export const Account = () => {
 
   const dispatch = useAppDispatch();
 
-  const handleOut = () => {
+  const handleSignOut = () => {
     const auth = getAuth();
     signOut(auth).then(() => {
       dispatch(removeUser());
@@ -51,7 +51,7 @@ export const Account = () => {
           <DateRegister>{currentUser.created}</DateRegister>
         </DateWrapper>
       </ProfileData>
-      <IoMdExit style={exitStyle} onClick={handleOut} />
+      <IoMdExit style={exitStyle} onClick={handleSignOut} />
     </StyledAccount>
   );
 };
