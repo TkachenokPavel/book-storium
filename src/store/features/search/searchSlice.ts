@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { AxiosError } from "axios";
 import { bookAPI } from "../../../services";
 import { ISearchedBooksResponse } from "../../../types/types";
@@ -45,7 +45,7 @@ const searchSlice = createSlice({
   name: "search",
   initialState,
   reducers: {
-    setSearchValue: (state, { payload }) => {
+    setSearchValue: (state, { payload }: PayloadAction<string>) => {
       state.searchValue = payload;
     },
     removeState: (state) => {

@@ -1,4 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { UserData } from "../../../components/SignIn/SignIn";
 
 type userData = {
   email: string | null;
@@ -36,7 +37,7 @@ const authenticationSlice = createSlice({
       state.error = null;
       state.isLoading = false;
     },
-    setUser(state, { payload }) {
+    setUser(state, { payload }: PayloadAction<UserData>) {
       state.currentUser.email = payload.email;
       state.currentUser.created = payload.created;
       state.error = null;
@@ -48,7 +49,7 @@ const authenticationSlice = createSlice({
       state.error = null;
       state.isLoading = false;
     },
-    setError(state, { payload }) {
+    setError(state, { payload }: PayloadAction<string | null>) {
       state.currentUser.email = null;
       state.currentUser.created = null;
       state.error = payload;

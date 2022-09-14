@@ -27,6 +27,11 @@ export type FormValues = {
   password: string;
 };
 
+export type UserData = {
+  email: string | null;
+  created: string | null;
+};
+
 const override: CSSProperties = {
   display: "block",
 };
@@ -48,12 +53,15 @@ export const SignIn = () => {
 
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        dispatch(
-          setUser({
-            email: userCredential.user.email,
-            created: userCredential.user.metadata.creationTime?.slice(5),
-          }),
-        );
+        if (userCredential.user.metadata.creationTime) {
+          dispatch(
+            setUser({
+              email: userCredential.user.email,
+              created: userCredential.user.metadata.creationTime.slice(5),
+            }),
+          );
+        }
+
         navigate(`/${ROUTE.ACCOUNT}`);
       })
       .catch((error) => {
