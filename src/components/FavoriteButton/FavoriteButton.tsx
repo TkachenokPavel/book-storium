@@ -5,8 +5,8 @@ import { Color } from "../../ui";
 import { CSSProperties } from "styled-components";
 import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { addItem, removeItem } from "../../store/features/favorite/favoriteSlice";
 import { getFavorite } from "../../store/selectors/favoriteSelector";
+import { removeItem, addItem } from "../../store";
 
 interface IProps {
   book: IBookDetails;
