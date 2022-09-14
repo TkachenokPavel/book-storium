@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { Media } from '../../ui';
+import styled from "styled-components";
+import { Media } from "../../ui";
 
 export const Container = styled.div`
   display: flex;

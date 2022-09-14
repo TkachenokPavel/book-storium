@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { Tabs, TabList, Tab, TabPanel } from 'react-tabs';
-import { Color, S1, BODY } from '../../ui';
+import styled from "styled-components";
+import { Tabs, TabList, Tab, TabPanel } from "react-tabs";
+import { Color, S1, BODY } from "../../ui";
 
 export const StyledTabs = styled(Tabs)`
   ${S1};
@@ -9,7 +9,7 @@ export const StyledTabs = styled(Tabs)`
 `;
 
 export const StyledTabList = styled(TabList).attrs(() => ({
-  tabsrole: 'TabList',
+  tabsrole: "TabList",
 }))`
   display: flex;
 
@@ -19,7 +19,7 @@ export const StyledTabList = styled(TabList).attrs(() => ({
 `;
 
 export const StyledTab = styled(Tab).attrs(() => ({
-  tabsrole: 'Tab',
+  tabsrole: "Tab",
 }))`
   width: 150px;
   margin-right: 4px;
@@ -44,7 +44,7 @@ export const StyledTab = styled(Tab).attrs(() => ({
 `;
 
 export const StyledTabPanel = styled(TabPanel).attrs(() => ({
-  tabsrole: 'TabPanel'
+  tabsrole: "TabPanel",
 }))`
   display: none;
 
@@ -67,5 +67,4 @@ export const Subtitle = styled.p`
   margin-bottom: 24px;
 `;
 
-export const Description = styled.p`
-`;
+export const Description = styled.p``;

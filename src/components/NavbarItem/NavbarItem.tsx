@@ -1,14 +1,10 @@
-import { ReactNode } from "react"
-import { StyledItem } from "./styles"
+import { ReactNode } from "react";
+import { StyledItem } from "./styles";
 
 interface IProps {
-    img: ReactNode
+  img: ReactNode;
 }
 
 export const NavbarItem = ({ img }: IProps) => {
-    return (
-        <StyledItem>
-            {img}
-        </StyledItem>
-    )
-}
+  return <StyledItem>{img}</StyledItem>;
+};

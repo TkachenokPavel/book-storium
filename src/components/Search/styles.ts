@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import search from '../../assets/icons/search.svg'
-import { Color, Media } from '../../ui';
+import styled from "styled-components";
+import search from "../../assets/icons/search.svg";
+import { Color, Media } from "../../ui";
 
 export const StyledSearch = styled.div`
   display: flex;

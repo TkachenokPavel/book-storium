@@ -1,6 +1,6 @@
-import styled from 'styled-components';
-import { AiOutlineClose } from 'react-icons/ai'
-import { Color } from '../../ui';
+import styled from "styled-components";
+import { AiOutlineClose } from "react-icons/ai";
+import { Color } from "../../ui";
 
 export const StyledModalWindow = styled.div`
   position: absolute;

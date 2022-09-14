@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { Color, H2, H3, Media } from '../../ui';
+import styled from "styled-components";
+import { Color, H2, H3, Media } from "../../ui";
 
 export const StyledCart = styled.section`
   display: flex;
@@ -30,7 +30,7 @@ export const EmptyCart = styled.h3`
   margin-top: 50px;
 
   ${H2};
-  font-family: 'Bebas Neue', cursive;
+  font-family: "Bebas Neue", cursive;
 `;
 
 export const ConfirmWrapper = styled.div`
@@ -48,12 +48,12 @@ export const TotalWrapper = styled.div`
 
 export const Total = styled.span`
   ${H3};
-  font-family: 'Bebas Neue', cursive;
+  font-family: "Bebas Neue", cursive;
 `;
 
 export const TotalPrice = styled.span`
   ${H3};
-  font-family: 'Bebas Neue', cursive;
+  font-family: "Bebas Neue", cursive;
 `;
 
 export const ConfirmButton = styled.button`

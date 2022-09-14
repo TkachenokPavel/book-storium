@@ -7,17 +7,17 @@ import favoriteReducer from "./features/favorite/favoriteSlice";
 import cartReducer from "./features/cart/cartSlice";
 
 const store = configureStore({
-    reducer: {
-        newBooks: newBooksReducer,
-        bookDetails: bookDetailsReducer,
-        search: searchReducer,
-        authentication: authenticationReducer,
-        favorite: favoriteReducer,
-        cart: cartReducer,
-    }
-})
+  reducer: {
+    newBooks: newBooksReducer,
+    bookDetails: bookDetailsReducer,
+    search: searchReducer,
+    authentication: authenticationReducer,
+    favorite: favoriteReducer,
+    cart: cartReducer,
+  },
+});
 
-export type RootState = ReturnType<typeof store.getState>
-export type AppDispatch = typeof store.dispatch
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
 
 export { store };

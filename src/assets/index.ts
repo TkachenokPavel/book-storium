@@ -1,3 +1,4 @@
-import { Cart, Favorite, Account, ArrowBack, Logo } from './icons/';
+import { CartIcon, FavoriteIcon, AccountIcon, ArrowBackIcon, LogoIcon, SearchIcon } from "./icons";
+import NotFound from "./images/not-found.jpg";
 
-export { Cart, Favorite, Account, ArrowBack, Logo }
+export { CartIcon, FavoriteIcon, AccountIcon, ArrowBackIcon, LogoIcon, SearchIcon, NotFound };

@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { H2, Media } from '../../ui';
+import styled from "styled-components";
+import { H2, Media } from "../../ui";
 
 export const StyledFavorites = styled.section`
   display: flex;
@@ -24,5 +24,5 @@ export const FavoritesList = styled.ul`
 
 export const EmptyFavorites = styled.h3`
   ${H2};
-  font-family: 'Bebas Neue', cursive;
+  font-family: "Bebas Neue", cursive;
 `;

@@ -1,7 +1,3 @@
-import React from 'react'
-
 export const Reset = () => {
-    return (
-        <div>Reset</div>
-    )
-}
+  return <div>Reset</div>;
+};

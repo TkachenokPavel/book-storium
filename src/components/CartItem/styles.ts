@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { Color, Media } from '../../ui';
+import styled from "styled-components";
+import { Color, Media } from "../../ui";
 
 export const StyledCartItem = styled.li`
   display: flex;
@@ -11,22 +11,22 @@ export const StyledCartItem = styled.li`
 
   ${Media.MD} {
     height: 180px;
-  };
+  }
 
   ${Media.SM} {
     flex-direction: column;
 
     height: auto;
-  };
+  }
 
-  & a:first-of-type{
+  & a:first-of-type {
     flex-shrink: 0;
     width: 170px;
 
     ${Media.SM} {
-    align-self: center;
-    width: 100%;
-  };
+      align-self: center;
+      width: 100%;
+    }
   }
 `;
 
@@ -38,5 +38,5 @@ export const Image = styled.img`
 
   ${Media.MD} {
     width: 100%;
-  };
+  } ;
 `;

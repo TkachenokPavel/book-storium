@@ -3,8 +3,7 @@ import { useAuth } from "../hooks/useAuth";
 import { ROUTE } from "./routes";
 
 export const ProtectedRoutes = () => {
-    const isAuth = useAuth();
+  const isAuth = useAuth();
 
-    return isAuth ? <Outlet /> : <Navigate to={ROUTE.AUTHENTICATION} />;
+  return isAuth ? <Outlet /> : <Navigate to={ROUTE.AUTHENTICATION} />;
 };
-

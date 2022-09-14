@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { BODY, Color, H3 } from '../../ui';
+import styled from "styled-components";
+import { BODY, Color, H3 } from "../../ui";
 
 export const StyledSearch = styled.section`
   display: flex;
@@ -23,7 +23,7 @@ export const Previous = styled.button`
   color: ${Color.SECONDARY};
 
   background-color: #fff;
-  border:none;
+  border: none;
 
   &:hover {
     color: ${Color.PRIMARY};
@@ -36,7 +36,7 @@ export const Next = styled.button`
   color: ${Color.SECONDARY};
 
   background-color: #fff;
-  border:none;
+  border: none;
 
   &:hover {
     color: ${Color.PRIMARY};

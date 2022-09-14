@@ -1,3 +1,3 @@
 import { CustomLink } from "./CustomLink";
 
-export { CustomLink }
+export { CustomLink };

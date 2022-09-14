@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { Color } from '../../ui';
+import styled from "styled-components";
+import { Color } from "../../ui";
 
 export const StyledFooter = styled.footer`
   display: flex;

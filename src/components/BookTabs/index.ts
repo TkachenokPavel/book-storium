@@ -1,3 +1,3 @@
 import { BookTabs } from "./BookTabs";
 
-export { BookTabs }
+export { BookTabs };

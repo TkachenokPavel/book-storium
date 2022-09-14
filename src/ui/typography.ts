@@ -1,9 +1,9 @@
-import { css } from 'styled-components';
+import { css } from "styled-components";
 import { Color } from "./colors";
 import { Media } from "./media";
 
 export const H1 = css`
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 56px;
@@ -18,7 +18,7 @@ export const H1 = css`
 `;
 
 export const H2 = css`
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 40px;
@@ -26,14 +26,14 @@ export const H2 = css`
 
   color: ${Color.PRIMARY};
 
-  ${Media.SM}{
+  ${Media.SM} {
     font-size: 28px;
     line-height: 40px;
   }
 `;
 
 export const H3 = css`
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -43,7 +43,7 @@ export const H3 = css`
 `;
 
 export const S1 = css`
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -54,7 +54,7 @@ export const S1 = css`
 `;
 
 export const BODY = css`
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -64,7 +64,7 @@ export const BODY = css`
 `;
 
 export const BODY2 = css`
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 16px;

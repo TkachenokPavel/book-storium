@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { BODY, BODY2, Color } from '../../ui';
+import styled from "styled-components";
+import { BODY, BODY2, Color } from "../../ui";
 
 export const StyledCard = styled.li`
   display: flex;
@@ -10,9 +10,8 @@ export const StyledCard = styled.li`
   height: 370px;
 
   border-radius: 15px;
-  background: #F7F7F7;
-  box-shadow:  12px 12px 40px #9c9c9c,
-             -12px -12px 40px #ffffff;
+  background: #f7f7f7;
+  box-shadow: 12px 12px 40px #9c9c9c, -12px -12px 40px #ffffff;
 `;
 
 export const Image = styled.img`
@@ -29,7 +28,7 @@ export const Title = styled.h3`
   font-weight: 700;
   line-height: 1;
   letter-spacing: 0.05px;
-  
+
   word-break: break-all;
 
   padding: 10px 20px;

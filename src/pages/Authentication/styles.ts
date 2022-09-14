@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { Color, H3 } from '../../ui';
+import styled from "styled-components";
+import { Color, H3 } from "../../ui";
 
 export const StyledAuthentication = styled.div`
   display: grid;
@@ -29,15 +29,15 @@ export const SignInSwitch = styled.div<{ $formSwitch: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   width: 50%;
-  
+
   ${H3};
-  text-transform: uppercase ;
+  text-transform: uppercase;
 
   border-bottom: 1px solid;
-  border-color: ${(({ $formSwitch }) => $formSwitch ? Color.PRIMARY : Color.SECONDARY)};
-  color: ${(({ $formSwitch }) => $formSwitch ? Color.PRIMARY : Color.SECONDARY)};
+  border-color: ${({ $formSwitch }) => ($formSwitch ? Color.PRIMARY : Color.SECONDARY)};
+  color: ${({ $formSwitch }) => ($formSwitch ? Color.PRIMARY : Color.SECONDARY)};
 
   cursor: pointer;
 `;
@@ -50,11 +50,11 @@ export const SignUpSwitch = styled.div<{ $formSwitch: boolean }>`
   width: 50%;
 
   ${H3};
-  text-transform: uppercase ;
+  text-transform: uppercase;
 
-  border-bottom: 1px solid ;
-  border-color: ${(({ $formSwitch }) => $formSwitch ? Color.PRIMARY : Color.SECONDARY)};
-  color: ${(({ $formSwitch }) => $formSwitch ? Color.PRIMARY : Color.SECONDARY)};
+  border-bottom: 1px solid;
+  border-color: ${({ $formSwitch }) => ($formSwitch ? Color.PRIMARY : Color.SECONDARY)};
+  color: ${({ $formSwitch }) => ($formSwitch ? Color.PRIMARY : Color.SECONDARY)};
 
   cursor: pointer;
 `;

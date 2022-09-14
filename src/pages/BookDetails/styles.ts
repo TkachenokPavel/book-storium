@@ -1,29 +1,29 @@
-import styled from 'styled-components';
-import { BODY, BODY2, Color, H2, H3, Media, S1 } from '../../ui';
+import styled from "styled-components";
+import { BODY, BODY2, Color, H2, H3, Media, S1 } from "../../ui";
 
 export const StyledBook = styled.section`
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 
-    width: 100%;
+  width: 100%;
 `;
 
 export const DetailsWrapper = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 
-    width: 100%;
+  width: 100%;
 `;
 
 export const ImageWrapper = styled.div`
-    position: relative;
+  position: relative;
 
-    width: 40%;
+  width: 40%;
 
-    ${Media.MD} {
+  ${Media.MD} {
     width: 100%;
   }
 `;
@@ -94,7 +94,7 @@ export const Preview = styled.a`
 
   ${S1};
   text-align: center;
-`
+`;
 
 export const MoreDetails = styled.span`
   display: inline-block;

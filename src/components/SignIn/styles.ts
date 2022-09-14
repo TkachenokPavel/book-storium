@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { BODY, BODY2, Color, H3 } from '../../ui';
+import styled from "styled-components";
+import { BODY, BODY2, Color, H3 } from "../../ui";
 
 export const StyledForm = styled.form`
   display: flex;
@@ -58,7 +58,6 @@ export const Button = styled.button`
 `;
 
 export const EmailLabel = styled.label`
-
   ${BODY2};
   text-transform: capitalize;
 `;
@@ -70,6 +69,4 @@ export const PasswordLabel = styled.label`
   text-transform: capitalize;
 `;
 
-export const ErrorMessage = styled.span`
-  
-`;
+export const ErrorMessage = styled.span``;

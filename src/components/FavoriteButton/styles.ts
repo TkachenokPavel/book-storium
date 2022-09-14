@@ -1,9 +1,9 @@
-import styled from 'styled-components';
-import { Color } from '../../ui';
+import styled from "styled-components";
+import { Color } from "../../ui";
 
 export const StyledFavoriteButton = styled.button`
   position: absolute;
-  top:0;
+  top: 0;
   right: 0;
 
   display: flex;

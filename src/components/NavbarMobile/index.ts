@@ -1,3 +1,3 @@
 import { NavbarMobile } from "./NavbarMobile";
 
-export { NavbarMobile }
+export { NavbarMobile };
