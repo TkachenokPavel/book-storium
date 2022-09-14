@@ -3,16 +3,19 @@ import { App } from "./App";
 import { BrowserRouter } from "react-router-dom";
 import { GlobalStyles } from "./ui/GlobalStyles";
 import { Provider } from "react-redux";
-import { store } from "./store/store";
+import { persistor, store } from "./store/store";
 import "./firebase";
+import { PersistGate } from "redux-persist/integration/react";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 
 root.render(
   <BrowserRouter>
     <Provider store={store}>
-      <GlobalStyles />
-      <App />
+      <PersistGate loading={null} persistor={persistor}>
+        <GlobalStyles />
+        <App />
+      </PersistGate>
     </Provider>
   </BrowserRouter>,
 );
