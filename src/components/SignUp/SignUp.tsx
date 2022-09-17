@@ -6,9 +6,7 @@ import {
   ErrorMessage,
   InputConfirm,
   InputEmail,
-  InputName,
   InputPassword,
-  NameLabel,
   PasswordLabel,
   StyledForm,
 } from "./styles";
@@ -25,7 +23,6 @@ import { CSSProperties, useEffect } from "react";
 import { getFirebaseMessageError } from "../../utils/firebaseError";
 
 export type FormValues = {
-  name: string;
   email: string;
   password: string;
   passwordConfirm: string;
@@ -82,21 +79,6 @@ export const SignUp = ({ isOpen, toggleModal }: IProps) => {
 
   return (
     <StyledForm onSubmit={handleSubmit(onSubmit)}>
-      <NameLabel>
-        name
-        <InputName
-          type="text"
-          placeholder="Your name"
-          {...register("name", {
-            required: {
-              value: true,
-              message: "Enter your name",
-            },
-          })}
-        />
-      </NameLabel>
-      {errors.name && <ErrorMessage>{errors.name.message}</ErrorMessage>}
-
       <EmailLabel>
         email
         <InputEmail
@@ -106,6 +88,12 @@ export const SignUp = ({ isOpen, toggleModal }: IProps) => {
             required: {
               value: true,
               message: "Enter your email",
+            },
+            pattern: {
+              value:
+                // eslint-disable-next-line max-len
+                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+              message: "Please enter a valid email",
             },
           })}
         />
@@ -122,6 +110,14 @@ export const SignUp = ({ isOpen, toggleModal }: IProps) => {
               value: true,
               message: "Enter your password",
             },
+            minLength: {
+              value: 6,
+              message: "Password cannot be less than 6 symbols",
+            },
+            maxLength: {
+              value: 20,
+              message: "Password cannot be more than 20 symbols",
+            },
           })}
         />
       </PasswordLabel>
@@ -130,7 +126,7 @@ export const SignUp = ({ isOpen, toggleModal }: IProps) => {
       <ConfirmLabel>
         confirm password
         <InputConfirm
-          type="passwordConfirm"
+          type="password"
           placeholder="Confirm your password"
           {...register("passwordConfirm", {
             required: {
@@ -142,6 +138,7 @@ export const SignUp = ({ isOpen, toggleModal }: IProps) => {
       </ConfirmLabel>
       {errors.passwordConfirm && <ErrorMessage>{errors.passwordConfirm.message}</ErrorMessage>}
       {error && <ErrorMessage>{error}</ErrorMessage>}
+
       <Button type="submit">
         {isLoading ? (
           <CircleLoader loading={isLoading} cssOverride={override} size={30} color="white" />
