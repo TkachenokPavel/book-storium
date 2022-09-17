@@ -63,7 +63,7 @@ const searchSlice = createSlice({
       state.isLoading = false;
       state.error = null;
       state.searchResponse.books = payload.books;
-      state.searchResponse.error = payload.page;
+      state.searchResponse.error = payload.error;
       state.searchResponse.page = payload.page;
       state.searchResponse.total = payload.total;
     });

@@ -6,8 +6,11 @@ type userData = {
   created: string | null;
 };
 
+type theme = "dark" | "light";
+
 type authenticationState = {
   currentUser: userData;
+  theme: theme;
   error: null | string;
   isLoading: boolean;
 };
@@ -17,6 +20,7 @@ const initialState: authenticationState = {
     email: null,
     created: null,
   },
+  theme: "light",
   error: null,
   isLoading: false,
 };
