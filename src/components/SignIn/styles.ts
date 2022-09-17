@@ -7,6 +7,10 @@ export const StyledForm = styled.form`
 
   width: 100%;
   margin-top: 32px;
+
+  & a {
+    color: ${Color.PRIMARY};
+  }
 `;
 
 export const InputEmail = styled.input`
@@ -70,3 +74,8 @@ export const PasswordLabel = styled.label`
 `;
 
 export const ErrorMessage = styled.span``;
+
+export const ResetPassword = styled.p`
+  margin-top: 14px;
+  font-weight: 700;
+`;

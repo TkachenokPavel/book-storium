@@ -17,6 +17,7 @@ import { FavoriteButton } from "./FavoriteButton";
 import { FavoriteItem } from "./FavoriteItem";
 import { CartItem } from "./CartItem";
 import { Counter } from "./Counter";
+import { ResetForm } from "./ResetForm";
 
 export {
   Header,
@@ -38,4 +39,5 @@ export {
   FavoriteItem,
   CartItem,
   Counter,
+  ResetForm,
 };

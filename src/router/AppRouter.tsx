@@ -6,7 +6,7 @@ import {
   Cart,
   Account,
   Favorites,
-  Reset,
+  ResetPage,
   Authentication,
   Search,
   NotFound,
@@ -21,8 +21,9 @@ export const AppRouter = () => {
         <Route index element={<Home />} />
         <Route path={ROUTE.SEARCH} element={<Search />} />
         <Route path={ROUTE.BOOK_DETAILS} element={<BookDetails />} />
-        <Route path={ROUTE.RESET} element={<Reset />} />
+
         <Route path={ROUTE.AUTHENTICATION} element={<Authentication />} />
+        <Route path={`${ROUTE.AUTHENTICATION}/${ROUTE.RESET}`} element={<ResetPage />} />
         <Route path={ROUTE.NOT_FOUND} element={<NotFound />} />
         <Route element={<ProtectedRoutes />}>
           <Route path={ROUTE.CART} element={<Cart />} />

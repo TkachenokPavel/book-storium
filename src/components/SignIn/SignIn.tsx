@@ -1,6 +1,7 @@
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { CSSProperties } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { CircleLoader } from "react-spinners";
 import { ROUTE } from "../../router/routes";
@@ -20,9 +21,10 @@ import {
   EmailLabel,
   PasswordLabel,
   ErrorMessage,
+  ResetPassword,
 } from "./styles";
 
-export type FormValues = {
+type FormValues = {
   email: string;
   password: string;
 };
@@ -101,6 +103,10 @@ export const SignIn = () => {
       </PasswordLabel>
       {errors.password && <ErrorMessage>{errors.password.message}</ErrorMessage>}
       {error && <ErrorMessage>{error}</ErrorMessage>}
+
+      <Link to={ROUTE.RESET}>
+        <ResetPassword>Forgot Password?</ResetPassword>
+      </Link>
 
       <Button>
         {isLoading ? (
