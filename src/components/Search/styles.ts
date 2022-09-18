@@ -7,15 +7,15 @@ export const StyledSearch = styled.div`
   align-items: center;
   width: 45%;
   margin-right: 3%;
+  margin-left: 20px;
 
   ${Media.MD} {
-    width: 60%;
-    margin-left: 10%;
+    width: 80%;
+    margin: 0;
   }
 
   ${Media.SM} {
     width: 100%;
-    margin: 0;
   }
 `;
 
@@ -23,15 +23,17 @@ export const Input = styled.input`
   width: 100%;
   padding: 10px 15px;
 
+  background-color: ${Color.BACKGROUND};
   border: none;
-  border-bottom: 2px solid ${Color.GREY};
+  border-bottom: 2px solid ${Color.SECONDARY};
 
   &:focus {
     outline: none;
-    border-bottom: 2px solid ${Color.PRIMARY};
+    border-bottom: 2px solid ${Color.GREY};
   }
 
-  ${Media.SM} {
+  ${Media.MD} {
+    border-bottom: 2px solid ${Color.SECONDARY};
     background: ${Color.PURPLE};
   }
 `;

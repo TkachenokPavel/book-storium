@@ -22,7 +22,7 @@ export const InputEmail = styled.input`
   ${BODY};
 
   border: 1px solid ${Color.GREY};
-
+  color: #000000;
   &:focus {
     outline: none;
     border-color: ${Color.PRIMARY_LIGHT};
@@ -36,7 +36,7 @@ export const InputPassword = styled.input`
   padding-left: 15px;
 
   ${BODY};
-
+  color: #000000;
   border: 1px solid ${Color.GREY};
 
   &:focus {

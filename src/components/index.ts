@@ -20,6 +20,7 @@ import { Counter } from "./Counter";
 import { ResetForm } from "./ResetForm";
 import { CloseNavbar } from "./CloseNavbar";
 import { NavbarMobileItem } from "./NavbarMobileItem";
+import { ModeSwitcher } from "./ModeSwitcher";
 
 export {
   Header,
@@ -44,4 +45,5 @@ export {
   ResetForm,
   CloseNavbar,
   NavbarMobileItem,
+  ModeSwitcher,
 };

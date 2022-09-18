@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Color } from "../../ui";
 
 export const StyledFavoriteButton = styled.button`
   position: absolute;
@@ -12,6 +11,6 @@ export const StyledFavoriteButton = styled.button`
 
   width: 50px;
   height: 50px;
-  background: ${Color.PRIMARY};
+  background: #313037;
   border: none;
 `;

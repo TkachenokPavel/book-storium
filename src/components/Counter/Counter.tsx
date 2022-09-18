@@ -30,11 +30,11 @@ export const Counter = ({ isbn13, amount }: IProps) => {
   return (
     <StyledCounter>
       <DecreaseButton type="button" onClick={handleDecrease}>
-        <DecreaseButtonImage />
+        <DecreaseButtonImage stroke="white" />
       </DecreaseButton>
       <Amount>{amount}</Amount>
       <IncreaseButton type="button" onClick={handleIncrease}>
-        <IncreaseButtonImage />
+        <IncreaseButtonImage stroke="white" />
       </IncreaseButton>
     </StyledCounter>
   );

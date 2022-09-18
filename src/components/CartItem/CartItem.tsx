@@ -59,7 +59,7 @@ export const CartItem = ({ cartItemIsbn }: IProps) => {
           </DetailsWrapper>
           {width && width > 576 ? (
             <ButtonRemove type="button" onClick={handleRemove}>
-              <ButtonImage />
+              <ButtonImage stroke="white" />
             </ButtonRemove>
           ) : null}
         </StyledCartItem>

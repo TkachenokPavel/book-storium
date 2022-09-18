@@ -10,8 +10,8 @@ export const StyledCard = styled.li`
   height: 370px;
 
   border-radius: 15px;
-  background: #f7f7f7;
-  box-shadow: 12px 12px 40px #9c9c9c, -12px -12px 40px #ffffff;
+  background: ${Color.LIGHT};
+  box-shadow: 12px 12px 40px #9c9c9c, -12px -12px 40px ${Color.BACKGROUND};
 `;
 
 export const Image = styled.img`
@@ -36,13 +36,14 @@ export const Title = styled.h3`
 
 export const Price = styled.p`
   ${BODY2};
+  font-size: 21px;
   flex-grow: 1;
   align-self: flex-end;
 
   display: flex;
   align-self: flex-end;
 
-  padding-top: 10px;
-  padding-right: 10px;
+  padding-top: 15px;
+  padding-right: 15px;
   max-height: 50px;
 `;

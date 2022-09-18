@@ -1,7 +1,11 @@
 import { createGlobalStyle } from "styled-components";
+import { Color } from "./colors";
+import { Theme } from "./theme";
 import { BODY } from "./typography";
 
 export const GlobalStyles = createGlobalStyle`
+    ${Theme}
+
     html, body, body div, span, object, iframe, 
     h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, 
     address, cite, code, del, dfn, em, img, ins, kbd, 
@@ -118,5 +122,8 @@ export const GlobalStyles = createGlobalStyle`
     body {
         position: relative;
         ${BODY}
+        background: ${Color.BACKGROUND};
     }
+
+    
 `;

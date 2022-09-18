@@ -6,11 +6,9 @@ type userData = {
   created: string | null;
 };
 
-type theme = "dark" | "light";
-
 type authenticationState = {
   currentUser: userData;
-  theme: theme;
+  theme: string;
   error: null | string;
   isLoading: boolean;
 };
@@ -59,10 +57,27 @@ const authenticationSlice = createSlice({
       state.error = payload;
       state.isLoading = false;
     },
+    setThemeDark(state) {
+      const htmlteg = document.documentElement;
+      htmlteg.setAttribute("theme", "dark");
+      state.theme = "dark";
+    },
+    setThemeLight(state) {
+      const htmlteg = document.documentElement;
+      htmlteg.setAttribute("theme", "light");
+      state.theme = "light";
+    },
   },
 });
 
-export const { setIsLoading, setUser, removeUser, removeIsLoading, setError } =
-  authenticationSlice.actions;
+export const {
+  setIsLoading,
+  setUser,
+  removeUser,
+  removeIsLoading,
+  setError,
+  setThemeDark,
+  setThemeLight,
+} = authenticationSlice.actions;
 
 export default authenticationSlice.reducer;

@@ -21,6 +21,7 @@ import { getUser } from "../../store/selectors/authenticationSelector";
 import CircleLoader from "react-spinners/CircleLoader";
 import { CSSProperties, useEffect } from "react";
 import { getFirebaseMessageError } from "../../utils/firebaseError";
+import { Color } from "../../ui";
 
 export type FormValues = {
   email: string;
@@ -141,7 +142,12 @@ export const SignUp = ({ isOpen, toggleModal }: IProps) => {
 
       <Button type="submit">
         {isLoading ? (
-          <CircleLoader loading={isLoading} cssOverride={override} size={30} color="white" />
+          <CircleLoader
+            loading={isLoading}
+            cssOverride={override}
+            size={30}
+            color={Color.BACKGROUND}
+          />
         ) : (
           "sign up"
         )}

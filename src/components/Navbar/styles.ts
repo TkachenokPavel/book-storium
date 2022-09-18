@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import { Color, Media } from "../../ui";
+import { Color } from "../../ui";
 
 export const StyledNavbar = styled.nav`
   flex-grow: 1;
   display: flex;
   justify-content: flex-end;
 
-  width: 185px;
+  gap: 30px;
 `;
 
 export const StyledNavbarMobile = styled(motion.nav)`
@@ -16,6 +16,7 @@ export const StyledNavbarMobile = styled(motion.nav)`
   bottom: 0;
   z-index: 100;
 
+  display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
@@ -34,6 +35,8 @@ export const NavbarList = styled.ul`
 
   width: 185px;
 `;
+
+export const NavbarItem = styled.li``;
 
 export const NavbarMobileList = styled.ul`
   display: flex;

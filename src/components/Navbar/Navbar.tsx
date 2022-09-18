@@ -1,12 +1,23 @@
-import { NavbarList, NavbarMobileList, StyledNavbar, StyledNavbarMobile } from "./styles";
+import {
+  NavbarList,
+  NavbarMobileList,
+  StyledNavbar,
+  StyledNavbarMobile,
+  NavbarItem,
+} from "./styles";
 import { CartIcon, FavoriteIcon, AccountIcon } from "../../assets";
-import { NavbarItem } from "../NavbarItem";
 import { ROUTE } from "../../router/routes";
-import { Link, Route, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Search } from "../Search";
 import { CloseNavbar } from "../CloseNavbar";
 import { useToggle, useWindiwSize } from "../../hooks";
 import { NavbarMobileItem } from "../NavbarMobileItem";
+import { ModeSwitcher } from "../ModeSwitcher";
+
+const variants = {
+  open: { x: 0 },
+  closed: { x: "-800px" },
+};
 
 export const Navbar = () => {
   const [isOpen, toggleIsOpen] = useToggle();
@@ -30,16 +41,12 @@ export const Navbar = () => {
     navigate(`${ROUTE.ACCOUNT}`);
   };
 
-  const variants = {
-    open: { x: 0 },
-    closed: { x: "-800px" },
-  };
-
-  if (width < 576) {
+  if (width < 768) {
     return (
       <>
         <StyledNavbarMobile animate={isOpen ? "open" : "closed"} variants={variants}>
           <Search handleClose={handleClose} />
+          <ModeSwitcher />
           <NavbarMobileList>
             <NavbarMobileItem text="favorites" onClick={handleFavorites} />
             <NavbarMobileItem text="cart" onClick={handleCart} />
@@ -55,15 +62,22 @@ export const Navbar = () => {
     <>
       <StyledNavbar>
         <Search handleClose={handleClose} />
+        <ModeSwitcher />
         <NavbarList>
           <Link to={ROUTE.FAVORITES}>
-            <NavbarItem img={<FavoriteIcon />} key="favorite" />
+            <NavbarItem key="favorite">
+              <FavoriteIcon fill="white" />
+            </NavbarItem>
           </Link>
           <Link to={ROUTE.CART}>
-            <NavbarItem img={<CartIcon />} key="cart" />
+            <NavbarItem key="cart">
+              <CartIcon fill="white" />
+            </NavbarItem>
           </Link>
           <Link to={ROUTE.ACCOUNT}>
-            <NavbarItem img={<AccountIcon />} key="account" />
+            <NavbarItem key="account">
+              <AccountIcon fill="white" />
+            </NavbarItem>
           </Link>
         </NavbarList>
       </StyledNavbar>

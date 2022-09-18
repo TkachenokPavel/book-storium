@@ -32,7 +32,7 @@ export const InputEmail = styled.input`
   padding-left: 15px;
 
   ${BODY};
-
+  color: #000000;
   border: 1px solid ${Color.GREY};
 
   &:focus {
@@ -50,6 +50,7 @@ export const InputPassword = styled.input`
   ${BODY};
 
   border: 1px solid ${Color.GREY};
+  color: #000000;
 
   &:focus {
     outline: none;
@@ -64,7 +65,7 @@ export const InputConfirm = styled.input`
   padding-left: 15px;
 
   ${BODY};
-
+  color: #000000;
   border: 1px solid ${Color.GREY};
 
   &:focus {
