@@ -1,11 +1,21 @@
-import { Account } from "./Account";
-import { BookDetails } from "./BookDetails";
-import { Cart } from "./Cart";
-import { Favorites } from "./Favorites";
-import { Home } from "./Home";
+import { AccountPage } from "./AccountPage";
+import { BookDetailsPage } from "./BookDetailsPage";
+import { CartPage } from "./CartPage";
+import { FavoritesPage } from "./FavoritesPage";
+import { HomePage } from "./HomePage";
 import { ResetPage } from "./ResetPage";
-import { Search } from "./Search";
-import { Authentication } from "./Authentication";
-import { NotFound } from "./NotFound";
+import { SearchPage } from "./SearchPage";
+import { AuthenticationPage } from "./AuthenticationPage";
+import { NotFoundPage } from "./NotFoundPage";
 
-export { Account, BookDetails, Cart, Favorites, Home, ResetPage, Search, Authentication, NotFound };
+export {
+  AccountPage,
+  BookDetailsPage,
+  CartPage,
+  FavoritesPage,
+  HomePage,
+  ResetPage,
+  SearchPage,
+  AuthenticationPage,
+  NotFoundPage,
+};

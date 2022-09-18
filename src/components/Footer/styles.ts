@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Color } from "../../ui";
+import { Color, Media } from "../../ui";
 
 export const StyledFooter = styled.footer`
   display: flex;
@@ -11,6 +11,10 @@ export const StyledFooter = styled.footer`
   padding: 0 30px;
 
   border-top: 2px solid ${Color.GREY};
+
+  ${Media.SM} {
+    padding: 0;
+  }
 `;
 
 export const Copyright = styled.span`

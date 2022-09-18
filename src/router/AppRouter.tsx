@@ -1,15 +1,15 @@
 import { Routes, Route } from "react-router-dom";
 import { Layout } from "../components/Layout/Layout";
 import {
-  Home,
-  BookDetails,
-  Cart,
-  Account,
-  Favorites,
+  HomePage,
+  BookDetailsPage,
+  CartPage,
+  AccountPage,
+  FavoritesPage,
   ResetPage,
-  Authentication,
-  Search,
-  NotFound,
+  AuthenticationPage,
+  SearchPage,
+  NotFoundPage,
 } from "../pages";
 import { ProtectedRoutes } from "./ProtectedRoutes";
 import { ROUTE } from "./routes";
@@ -18,17 +18,17 @@ export const AppRouter = () => {
   return (
     <Routes>
       <Route path={ROUTE.HOME} element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path={ROUTE.SEARCH} element={<Search />} />
-        <Route path={ROUTE.BOOK_DETAILS} element={<BookDetails />} />
+        <Route index element={<HomePage />} />
+        <Route path={ROUTE.SEARCH} element={<SearchPage />} />
+        <Route path={ROUTE.BOOK_DETAILS} element={<BookDetailsPage />} />
 
-        <Route path={ROUTE.AUTHENTICATION} element={<Authentication />} />
+        <Route path={ROUTE.AUTHENTICATION} element={<AuthenticationPage />} />
         <Route path={`${ROUTE.AUTHENTICATION}/${ROUTE.RESET}`} element={<ResetPage />} />
-        <Route path={ROUTE.NOT_FOUND} element={<NotFound />} />
+        <Route path={ROUTE.NOT_FOUND} element={<NotFoundPage />} />
         <Route element={<ProtectedRoutes />}>
-          <Route path={ROUTE.CART} element={<Cart />} />
-          <Route path={ROUTE.ACCOUNT} element={<Account />} />
-          <Route path={ROUTE.FAVORITES} element={<Favorites />} />
+          <Route path={ROUTE.CART} element={<CartPage />} />
+          <Route path={ROUTE.ACCOUNT} element={<AccountPage />} />
+          <Route path={ROUTE.FAVORITES} element={<FavoritesPage />} />
         </Route>
       </Route>
     </Routes>
