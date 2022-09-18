@@ -18,6 +18,8 @@ import { FavoriteItem } from "./FavoriteItem";
 import { CartItem } from "./CartItem";
 import { Counter } from "./Counter";
 import { ResetForm } from "./ResetForm";
+import { CloseNavbar } from "./CloseNavbar";
+import { NavbarMobileItem } from "./NavbarMobileItem";
 
 export {
   Header,
@@ -40,4 +42,6 @@ export {
   CartItem,
   Counter,
   ResetForm,
+  CloseNavbar,
+  NavbarMobileItem,
 };

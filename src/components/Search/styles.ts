@@ -6,14 +6,15 @@ export const StyledSearch = styled.div`
   display: flex;
   align-items: center;
   width: 45%;
+  margin-right: 3%;
 
   ${Media.MD} {
     width: 60%;
-    margin-right: 70px;
+    margin-left: 10%;
   }
 
   ${Media.SM} {
-    width: 90%;
+    width: 100%;
     margin: 0;
   }
 `;
@@ -28,6 +29,10 @@ export const Input = styled.input`
   &:focus {
     outline: none;
     border-bottom: 2px solid ${Color.PRIMARY};
+  }
+
+  ${Media.SM} {
+    background: ${Color.PURPLE};
   }
 `;
 

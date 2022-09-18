@@ -9,11 +9,13 @@ export const StyledHeader = styled.header`
 
   width: 100%;
   padding: 25px 0;
+  height: 100px;
 
   border-bottom: 2px solid ${Color.GREY};
 
   ${Media.SM} {
     flex-direction: column;
     gap: 15px;
+    height: 70px;
   }
 `;
