@@ -1,46 +1,142 @@
-# Getting Started with Create React App
+<h1 align="center">
+  <a href="https://github.com/TkachenokPavel/book-storium">
+    <img src="readme/logo.svg" alt="Logo" width="125" height="125">
+  </a>
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
+  BookStorium - the best bookstore for IT professionals
+  <br />
+  <br />
+  <a href="https://github.com/dec0dOS/amazing-github-template/issues/new?assignees=&labels=bug&template=01_BUG_REPORT.md&title=bug%3A+">View Demo</a>
+</div>
 
-## Available Scripts
+<div align="center">
+<br />
 
-In the project directory, you can run:
+<details open="open">
+<summary>Table of Contents</summary>
 
-### `npm start`
+- [About](#about)
+  - [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [Installation](#installation)
+  - [Usage](#usage)
+- [Roadmap](#roadmap)
+- [Contacts](#contacts)
+</details>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## About
 
-### `npm test`
+[![Home Screenshot][home-screenshot]](https://github.com/OlgaUsovich/kinogoogle/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This project is a graduate work at the front-end developer course, in which I tried to apply all the knowledge and skills I received
 
-### `npm run build`
+In that project:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- I've got a good practice in working with API
+- I've learned how to work with firebase authentication
+- I've learned how to work with different libraries such as Redux Toolkit, React Router, Axios and many others
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This is just a training project, but thanks to it, I learned in practice many of the intricacies of working with ReactJS.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Built With
 
-### `npm run eject`
+- [![Typescript][typescriptlang.org]][typescript-url]
+- [![React][react.js]][react-url]
+- [![Axios][axios-http.com]][axios-url]
+- [![Firebase][firebase.google.com]][firebase-url]
+- [![Redux Toolkit][redux-toolkit.js.org]][redux-url]
+- [![React Hook Form][react-hook-form.com]][react-hook-form-url]
+- [![styled-components][styled-components]][styled-components-url]
+- [![React Router][reactrouter.com]][react-router-url]
+- [![Framer Motion][framer.com]][framer-url]
+- [![React Spinners][www.davidhu.io/react-spinners/]][react-spinners-url]
+- [![React Tabs][reactcommunity.org/react-tabs/]][react-tabs-url]
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Getting Started
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Just install the project to see how it works.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Installation
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. Clone the repo
+   ```sh
+   git clone https://github.com/TkachenokPavel/book-storium.git
+   ```
+2. Install NPM packages
 
-## Learn More
+   ```sh
+   npm install
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Usage
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This is a simple app to find the book you need. Movies can be found in search by title.
+
+[![Search Screen Shot][search-screenshot]](https://github.com/TkachenokPavel/book-storium/)
+
+Also you can veiw the full info about book.
+
+[![Book Details Screen Shot][book-details-screenshot]](https://github.com/TkachenokPavel/book-storium/)
+
+There is authentication block where you can sign up or sign in.
+
+[![Authentication Screen Shot][authentication-screenshot]](https://github.com/TkachenokPavel/book-storium/)
+
+You can add book to your cart in book details page.
+
+[![Cart Screen Shot][cart-screenshot]](https://github.com/TkachenokPavel/book-storium/)
+
+Also you can add book in favorites in book details page.
+
+[![Cart Screen Shot][favorites-screenshot]](https://github.com/TkachenokPavel/book-storium/)
+
+## Roadmap
+
+- [ ] Add drag'n'drop to cart and favorites items
+- [ ] Add firebase database for users data
+- [ ] Add editing user data on account page
+
+## Contact
+
+Pavel Tkachenok - (https://github.com/TkachenokPavel) - pasha.tkachenok@mail.ru
+
+Project Link: [https://github.com/TkachenokPavel/book-storium](https://github.com/TkachenokPavel/book-storium)
+
+<!--Links-->
+
+[home-screenshot]: readme/home.png
+[favorites-screenshot]: readme/favorites.png
+[cart-screenshot]: readme/cart.png
+[book-details-screenshot]: readme/book-details.png
+[authentication-screenshot]: readme/authentication.png
+[search-screenshot]: readme/search.png
+[typescriptlang.org]: https://img.shields.io/badge/-Typescript-blue?style=for-the-badge&logo=typescript&logoColor=white
+[typescript-url]: https://www.typescriptlang.org/
+[react.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[react-url]: https://reactjs.org/
+[axios-http.com]: https://img.shields.io/badge/-axios-671ddf?style=for-the-badge&logo=axios&logoColor=white
+[axios-url]: https://axios-http.com/ru/docs/intro
+[firebase.google.com]: https://img.shields.io/badge/-firebase-5f6368?style=for-the-badge&logo=firebase&logoColor=orange
+[firebase-url]: https://firebase.google.com/docs/
+[redux-toolkit.js.org]: https://img.shields.io/badge/-redux--toolkit-764abc?style=for-the-badge&logo=redux&logoColor=white
+[redux-url]: https://redux-toolkit.js.org/
+[react-hook-form.com]: https://img.shields.io/badge/-react--hook--form-1e2a4a?style=for-the-badge&logo=react-hook-form&logoColor=ec5990
+[react-hook-form-url]: https://react-hook-form.com/
+[github.com/rt2zz/redux-persist]: https://img.shields.io/badge/-redux--persist-persist?style=for-the-badge
+[persist-url]: https://github.com/rt2zz/redux-persist#readme
+[styled-components]: https://img.shields.io/badge/-styled--components-35495E?style=for-the-badge&logo=styled-components&logoColor=pink
+[styled-components-url]: https://styled-components.com/
+[framer.com]: https://img.shields.io/badge/-framer--motion-DD0031?style=for-the-badge&logo=framer&logoColor=black
+[framer-url]: https://www.framer.com/
+[react-select.com]: https://img.shields.io/badge/-react--select-FF3E00?style=for-the-badge
+[react-select-url]: https://react-select.com/home
+[reactrouter.com]: https://img.shields.io/badge/-react--router-563D7C?style=for-the-badge&logo=react-router&logoColor=white
+[react-router-url]: https://reactrouter.com/
+[react-spinners]: https://img.shields.io/badge/react--spinners-yellow?style=for-the-badge
+[react-spinners-url]: https://www.davidhu.io/react-spinners/
+[react-tabs]: https://img.shields.io/badge/react--tabs-black?style=for-the-badge
+[react-tabs-url]: https://reactcommunity.org/react-tabs/

@@ -22,7 +22,7 @@ export const Previous = styled.button`
   font-size: 21px;
   color: ${Color.SECONDARY};
 
-  background-color: #fff;
+  background-color: ${Color.BACKGROUND};
   border: none;
 
   &:hover {
@@ -35,7 +35,7 @@ export const Next = styled.button`
   font-size: 21px;
   color: ${Color.SECONDARY};
 
-  background-color: #fff;
+  background-color: ${Color.BACKGROUND};
   border: none;
 
   &:hover {
@@ -45,10 +45,13 @@ export const Next = styled.button`
 
 export const PrevText = styled.span`
   margin-left: 30px;
+
+  color: ${Color.BLACK};
 `;
 
 export const NextText = styled.span`
   margin-right: 30px;
+  color: ${Color.BLACK};
 `;
 
 export const EmptyList = styled.h3`
