@@ -1,6 +1,6 @@
 <h1 align="center">
   <a href="https://github.com/TkachenokPavel/book-storium">
-    <img src="readme/logo.svg" alt="Logo" width="125" height="125">
+    <img src="readme/logo.svg" alt="Logo" width="200" height="125">
   </a>
 </h1>
 
@@ -31,8 +31,6 @@
     <li><a href="#contact">Contact</a></li>
   </ol>
 </details>
-
----
 
 ## About
 
