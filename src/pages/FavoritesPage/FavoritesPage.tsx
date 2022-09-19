@@ -1,7 +1,7 @@
 import { CSSProperties } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowBackIcon } from "../../assets";
-import { FavoriteItem, Title } from "../../components";
+import { Carousel, FavoriteItem, Title } from "../../components";
 import { useAppSelector } from "../../store/hooks";
 import { getFavorite } from "../../store/selectors/favoriteSelector";
 import { EmptyFavorites, FavoritesList, StyledFavoritesPage } from "./styles";
@@ -22,7 +22,7 @@ export const FavoritesPage = () => {
 
   return (
     <StyledFavoritesPage>
-      <ArrowBackIcon onClick={handleBack} style={arrowStyles} />
+      <ArrowBackIcon onClick={handleBack} style={arrowStyles} stroke="white" />
       <Title title="favorites" />
       <FavoritesList>
         {favorites.length > 0 ? (
@@ -33,6 +33,7 @@ export const FavoritesPage = () => {
           <EmptyFavorites>Favorites list is empty</EmptyFavorites>
         )}
       </FavoritesList>
+      <Carousel />
     </StyledFavoritesPage>
   );
 };

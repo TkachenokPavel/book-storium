@@ -89,7 +89,7 @@ export const BookDetailsPage = () => {
 
   return (
     <StyledBookPage>
-      <ArrowBackIcon onClick={handleBack} style={arrowStyles} />
+      <ArrowBackIcon onClick={handleBack} style={arrowStyles} stroke="white" />
       <Title title={title} />
       <DetailsWrapper>
         <ImageWrapper>

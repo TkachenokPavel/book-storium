@@ -8,7 +8,7 @@
   BookStorium - the best bookstore for IT professionals
   <br />
   <br />
-  <a href="https://github.com/dec0dOS/amazing-github-template/issues/new?assignees=&labels=bug&template=01_BUG_REPORT.md&title=bug%3A+">View Demo</a>
+  <a href="https://tkachenokpavel.github.io/book-storium/">View Demo</a>
 </div>
 
 <details>

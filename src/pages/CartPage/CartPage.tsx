@@ -11,7 +11,7 @@ import {
 } from "./styles";
 import { ArrowBackIcon } from "../../assets";
 import { CSSProperties, useEffect } from "react";
-import { CartItem, Title } from "../../components";
+import { Carousel, CartItem, Title } from "../../components";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { calculateTotals } from "../../store/features/cart/cartSlice";
 import { getCart } from "../../store/selectors/cartSelector";
@@ -37,7 +37,7 @@ export const CartPage = () => {
 
   return (
     <StyledCartPage>
-      <ArrowBackIcon onClick={handleBack} style={arrowStyles} />
+      <ArrowBackIcon onClick={handleBack} style={arrowStyles} stroke="white" />
       <Title title="your cart" />
       <CartList>
         {cartItems.length > 0 ? (
@@ -57,6 +57,7 @@ export const CartPage = () => {
           <EmptyCart>Your cart is empty</EmptyCart>
         )}
       </CartList>
+      <Carousel />
     </StyledCartPage>
   );
 };

@@ -65,7 +65,7 @@ export const RowWrapper = styled.div`
 
 export const DetailsTitle = styled.span`
   ${BODY};
-  color: ${Color.SECONDARY};
+  color: ${Color.BLACK};
 `;
 
 export const Description = styled.span`

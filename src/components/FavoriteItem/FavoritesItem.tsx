@@ -19,7 +19,7 @@ import { useAppDispatch } from "../../store/hooks";
 import { Link } from "react-router-dom";
 import { useWindiwSize } from "../../hooks/useWindowSize";
 import { FavoriteButton } from "../FavoriteButton";
-import { removeItem } from "../../store";
+import { removeFavorite } from "../../store";
 
 interface IProps {
   favorite: IBookDetails;
@@ -38,7 +38,7 @@ export const FavoriteItem = ({ favorite }: IProps) => {
   const { image, title, authors, rating, price, year, isbn13 } = favorite;
 
   const handleRemove = () => {
-    dispatch(removeItem(isbn13));
+    dispatch(removeFavorite(isbn13));
   };
 
   return (

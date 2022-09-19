@@ -2,10 +2,12 @@ import styled from "styled-components";
 import { Color, H3 } from "../../ui";
 
 export const StyledCarouselItem = styled.div`
-  display: flex;
-  flex-direction: column;
+  margin: 0 auto;
+  width: 260px;
 
-  width: 260px !important;
+  @media (max-width: 350px) {
+    width: 200px;
+  }
 `;
 
 export const Image = styled.img`

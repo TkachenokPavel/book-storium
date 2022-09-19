@@ -1,7 +1,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { StyledCarousel } from "./styles";
+import { StyledCarousel, Title } from "./styles";
 import { getNewBooks, useAppSelector } from "../../store";
 import { CarouselItem } from "../CarouselItem";
 
@@ -24,7 +24,7 @@ export const Carousel = () => {
         },
       },
       {
-        breakpoint: 650,
+        breakpoint: 660,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -44,8 +44,9 @@ export const Carousel = () => {
   };
 
   return (
-    <StyledCarousel {...settings}>
-      <Slider>
+    <StyledCarousel>
+      <Title>Similar Books</Title>
+      <Slider {...settings}>
         {books.map((book) => {
           return <CarouselItem book={book} key={book.isbn13} />;
         })}

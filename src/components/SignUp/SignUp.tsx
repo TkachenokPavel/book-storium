@@ -19,7 +19,7 @@ import {
 } from "../../store/features/authentication/authenticationSlice";
 import { getUser } from "../../store/selectors/authenticationSelector";
 import CircleLoader from "react-spinners/CircleLoader";
-import { CSSProperties, useEffect } from "react";
+import { CSSProperties, useEffect, useRef } from "react";
 import { getFirebaseMessageError } from "../../utils/firebaseError";
 import { Color } from "../../ui";
 
@@ -44,10 +44,14 @@ export const SignUp = ({ isOpen, toggleModal }: IProps) => {
     handleSubmit,
     reset,
     formState: { errors },
+    watch,
   } = useForm<FormValues>({
     mode: "onSubmit",
     reValidateMode: "onSubmit",
   });
+
+  const password = useRef({});
+  password.current = watch("password", "");
 
   const dispatch = useAppDispatch();
   const { isLoading, error } = useAppSelector(getUser);
@@ -134,6 +138,7 @@ export const SignUp = ({ isOpen, toggleModal }: IProps) => {
               value: true,
               message: "Confirm your password",
             },
+            validate: (value: string) => value === password.current || "Repeat your password",
           })}
         />
       </ConfirmLabel>

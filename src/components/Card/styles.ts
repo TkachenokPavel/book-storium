@@ -11,7 +11,7 @@ export const StyledCard = styled.li`
 
   border-radius: 15px;
   background: ${Color.LIGHT};
-  box-shadow: 12px 12px 40px #9c9c9c, -12px -12px 40px ${Color.BACKGROUND};
+  box-shadow: 11px 11px 22px ${Color.SECONDARY}, -11px -11px 22px ${Color.BACKGROUND};
 `;
 
 export const Image = styled.img`
