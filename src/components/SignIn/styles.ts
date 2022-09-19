@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { BODY, BODY2, Color, H3 } from "../../ui";
+import { BODY, BODY2, Color, H3, Media } from "../../ui";
 
 export const StyledForm = styled.form`
   display: flex;
@@ -10,6 +10,10 @@ export const StyledForm = styled.form`
 
   & a {
     color: ${Color.PRIMARY};
+  }
+
+  ${Media.SM} {
+    margin-top: 16px;
   }
 `;
 
@@ -27,6 +31,10 @@ export const InputEmail = styled.input`
     outline: none;
     border-color: ${Color.PRIMARY_LIGHT};
   }
+
+  ${Media.SM} {
+    height: 42px;
+  }
 `;
 
 export const InputPassword = styled.input`
@@ -42,6 +50,10 @@ export const InputPassword = styled.input`
   &:focus {
     outline: none;
     border-color: ${Color.PRIMARY_LIGHT};
+  }
+
+  ${Media.SM} {
+    height: 42px;
   }
 `;
 
@@ -59,6 +71,10 @@ export const Button = styled.button`
   color: ${Color.LIGHT};
 
   background-color: ${Color.PRIMARY};
+
+  ${Media.SM} {
+    margin-top: 20px;
+  }
 `;
 
 export const EmailLabel = styled.label`
@@ -71,9 +87,15 @@ export const PasswordLabel = styled.label`
 
   ${BODY2};
   text-transform: capitalize;
+
+  ${Media.SM} {
+    margin: 8px 0px 4px;
+  }
 `;
 
-export const ErrorMessage = styled.span``;
+export const ErrorMessage = styled.span`
+  color: ${Color.RED};
+`;
 
 export const ResetPassword = styled.p`
   margin-top: 14px;

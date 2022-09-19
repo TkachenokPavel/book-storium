@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { ROUTE } from "../../router/routes";
 import { IBookShort } from "../../types/types";
 import { getShortBookTitle } from "../../utils";
 import { StyledCarouselItem, Image, Title } from "./styles";

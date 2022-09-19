@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { BODY, Color, H3 } from "../../ui";
+import { BODY, Color, H3, Media } from "../../ui";
 
 export const StyledSearchPage = styled.section`
   display: flex;
@@ -64,4 +64,8 @@ export const PageCounter = styled.p`
   ${BODY};
   font-size: 18px;
   color: ${Color.PRIMARY};
+
+  ${Media.SM} {
+    width: 190px;
+  }
 `;

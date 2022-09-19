@@ -2,7 +2,7 @@ import { CSSProperties, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import CircleLoader from "react-spinners/CircleLoader";
 import { ArrowBackIcon } from "../../assets";
-import { BookTabs, Carousel, CarouselItem, FavoriteButton, Rating, Title } from "../../components";
+import { BookTabs, Carousel, FavoriteButton, Rating, Title } from "../../components";
 import { ErrorMassage } from "../../components/BooksList/styles";
 import { fetchBookDetails } from "../../store/features/bookDetails/bookDetailsSlice";
 import { addItem, calculateTotals } from "../../store/features/cart/cartSlice";

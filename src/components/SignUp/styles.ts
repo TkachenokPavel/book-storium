@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { BODY, BODY2, Color, H3 } from "../../ui";
+import { BODY, BODY2, Color, H3, Media } from "../../ui";
 
 export const StyledForm = styled.form`
   display: flex;
@@ -7,6 +7,10 @@ export const StyledForm = styled.form`
 
   width: 100%;
   margin-top: 32px;
+
+  ${Media.SM} {
+    margin-top: 16px;
+  }
 `;
 
 export const InputName = styled.input`
@@ -23,6 +27,10 @@ export const InputName = styled.input`
     outline: none;
     border-color: ${Color.PRIMARY_LIGHT};
   }
+
+  ${Media.SM} {
+    height: 42px;
+  }
 `;
 
 export const InputEmail = styled.input`
@@ -38,6 +46,10 @@ export const InputEmail = styled.input`
   &:focus {
     outline: none;
     border-color: ${Color.PRIMARY_LIGHT};
+  }
+
+  ${Media.SM} {
+    height: 42px;
   }
 `;
 
@@ -56,6 +68,10 @@ export const InputPassword = styled.input`
     outline: none;
     border-color: ${Color.PRIMARY_LIGHT};
   }
+
+  ${Media.SM} {
+    height: 42px;
+  }
 `;
 
 export const InputConfirm = styled.input`
@@ -71,6 +87,10 @@ export const InputConfirm = styled.input`
   &:focus {
     outline: none;
     border-color: ${Color.PRIMARY_LIGHT};
+  }
+
+  ${Media.SM} {
+    height: 42px;
   }
 `;
 
@@ -88,6 +108,10 @@ export const Button = styled.button`
   color: ${Color.LIGHT};
 
   background-color: ${Color.PRIMARY};
+
+  ${Media.SM} {
+    margin-top: 20px;
+  }
 `;
 
 export const NameLabel = styled.label`
@@ -105,6 +129,10 @@ export const PasswordLabel = styled.label`
 
   ${BODY2};
   text-transform: capitalize;
+
+  ${Media.SM} {
+    margin: 8px 0 4px;
+  }
 `;
 
 export const ConfirmLabel = styled.label`
@@ -112,6 +140,12 @@ export const ConfirmLabel = styled.label`
 
   ${BODY2};
   text-transform: capitalize;
+
+  ${Media.SM} {
+    margin: 8px 0 4px;
+  }
 `;
 
-export const ErrorMessage = styled.span``;
+export const ErrorMessage = styled.span`
+  color: ${Color.RED};
+`;

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { BODY, BODY2, Color, H2, H3 } from "../../ui";
+import { BODY, BODY2, Color, H2, H3, Media } from "../../ui";
 
 export const StyledResetForm = styled.form`
   display: flex;
@@ -9,6 +9,10 @@ export const StyledResetForm = styled.form`
   padding: 0px 32px 40px;
 
   border: 1px solid ${Color.GREY};
+  ${Media.SM} {
+    width: 300px;
+    padding: 0px 20px 30px;
+  }
 `;
 
 export const EmailLabel = styled.label`
@@ -30,6 +34,10 @@ export const InputEmail = styled.input`
     outline: none;
     border-color: ${Color.PRIMARY_LIGHT};
   }
+
+  ${Media.SM} {
+    height: 42px;
+  }
 `;
 
 export const Button = styled.button`
@@ -48,7 +56,9 @@ export const Button = styled.button`
   background-color: ${Color.PRIMARY};
 `;
 
-export const ErrorMessage = styled.p``;
+export const ErrorMessage = styled.p`
+  color: ${Color.RED};
+`;
 
 export const Title = styled.h3`
   margin: 32px 0 16px;
@@ -63,4 +73,8 @@ export const NotificationReset = styled.p`
   margin-bottom: 10px;
 
   background: ${Color.PURPLE};
+
+  ${Media.SM} {
+    padding: 10px 10px;
+  }
 `;
