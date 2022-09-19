@@ -54,6 +54,11 @@ export const Button = styled.button`
   color: ${Color.LIGHT};
 
   background-color: ${Color.PRIMARY};
+
+  :hover {
+    background: #5b5a62;
+    transition: all 0.3s;
+  }
 `;
 
 export const ErrorMessage = styled.p`

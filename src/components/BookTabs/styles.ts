@@ -48,7 +48,7 @@ export const StyledTabPanel = styled(TabPanel).attrs(() => ({
 }))`
   display: none;
 
-  min-height: 25vh;
+  min-height: 170px;
   padding-top: 48px;
   margin-bottom: 48px;
 

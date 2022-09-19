@@ -25,6 +25,7 @@ import { CarouselItem } from "./CarouselItem";
 import { Carousel } from "./Carousel";
 import { SignIn } from "./SignIn";
 import { SignUp } from "./SignUp";
+import { Subscribe } from "./Subscribe";
 
 export {
   Header,
@@ -54,4 +55,5 @@ export {
   Carousel,
   SignIn,
   SignUp,
+  Subscribe,
 };

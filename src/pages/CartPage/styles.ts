@@ -74,5 +74,10 @@ export const ConfirmButton = styled.button`
   ${Media.SM} {
     padding: 7px;
     font-size: 18px;
-  } ;
+  }
+
+  :hover {
+    background: #5b5a62;
+    transition: all 0.3s;
+  }
 `;

@@ -75,6 +75,11 @@ export const Button = styled.button`
   ${Media.SM} {
     margin-top: 20px;
   }
+
+  :hover {
+    background: #5b5a62;
+    transition: all 0.3s;
+  }
 `;
 
 export const EmailLabel = styled.label`

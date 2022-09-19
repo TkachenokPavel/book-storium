@@ -12,7 +12,7 @@ export const StyledCarouselItem = styled.div`
 
 export const Image = styled.img`
   width: 100%;
-
+  border-radius: 10px;
   background: ${Color.GREEN};
 `;
 

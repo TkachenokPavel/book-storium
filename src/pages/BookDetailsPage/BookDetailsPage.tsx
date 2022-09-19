@@ -2,7 +2,7 @@ import { CSSProperties, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import CircleLoader from "react-spinners/CircleLoader";
 import { ArrowBackIcon } from "../../assets";
-import { BookTabs, Carousel, FavoriteButton, Rating, Title } from "../../components";
+import { BookTabs, Carousel, FavoriteButton, Rating, Subscribe, Title } from "../../components";
 import { ErrorMassage } from "../../components/BooksList/styles";
 import {
   addItem,
@@ -135,6 +135,7 @@ export const BookDetailsPage = () => {
           {pdf && <Preview href={Object.values(pdf)[0]}>Preview book</Preview>}
         </BookDetailsList>
         <BookTabs book={book} />
+        <Subscribe />
         <Carousel />
       </DetailsWrapper>
     </StyledBookPage>

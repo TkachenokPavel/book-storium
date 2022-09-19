@@ -85,6 +85,11 @@ export const CartButton = styled.button`
   text-transform: uppercase;
 
   background: ${Color.PRIMARY};
+
+  :hover {
+    background: #5b5a62;
+    transition: all 0.3s;
+  }
 `;
 
 export const Preview = styled.a`
