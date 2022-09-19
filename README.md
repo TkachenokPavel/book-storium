@@ -11,19 +11,25 @@
   <a href="https://github.com/dec0dOS/amazing-github-template/issues/new?assignees=&labels=bug&template=01_BUG_REPORT.md&title=bug%3A+">View Demo</a>
 </div>
 
-<div align="center">
-<br />
-
-<details open="open">
-<summary>Table of Contents</summary>
-
-- [About](#about)
-  - [Built With](#built-with)
-- [Getting Started](#getting-started)
-  - [Installation](#installation)
-  - [Usage](#usage)
-- [Roadmap](#roadmap)
-- [Contacts](#contacts)
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about">About</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
 </details>
 
 ---
@@ -53,8 +59,8 @@ This is just a training project, but thanks to it, I learned in practice many of
 - [![styled-components][styled-components]][styled-components-url]
 - [![React Router][reactrouter.com]][react-router-url]
 - [![Framer Motion][framer.com]][framer-url]
-- [![React Spinners][www.davidhu.io/react-spinners/]][react-spinners-url]
-- [![React Tabs][reactcommunity.org/react-tabs/]][react-tabs-url]
+- [![React Spinners][react-spinners]][react-spinners-url]
+- [![React Tabs][react-tabs]][react-tabs-url]
 
 ## Getting Started
 
