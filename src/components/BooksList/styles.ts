@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { H3 } from "../../ui";
+import { H3, Media } from "../../ui";
 
 export const StyledBooksList = styled.ul`
   display: grid;
@@ -9,6 +9,11 @@ export const StyledBooksList = styled.ul`
 
   width: 100%;
   margin-bottom: 72px;
+  margin-top: 50px;
+
+  ${Media.SM} {
+    margin-top: 20px;
+  }
 `;
 
 export const ErrorMassage = styled.p`

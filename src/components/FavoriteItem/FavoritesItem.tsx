@@ -57,7 +57,12 @@ export const FavoriteItem = ({ favorite }: IProps) => {
           </PriceAndRating>
         </DetailsWrapper>
         {width && width > 576 ? (
-          <ButtonRemove type="button" onClick={handleRemove}>
+          <ButtonRemove
+            type="button"
+            onClick={handleRemove}
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.9 }}
+          >
             <IoMdHeart style={favoriteIconStyles} />
           </ButtonRemove>
         ) : (

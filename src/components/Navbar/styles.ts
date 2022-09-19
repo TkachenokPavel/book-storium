@@ -36,7 +36,22 @@ export const NavbarList = styled.ul`
   width: 185px;
 `;
 
-export const NavbarItem = styled.li``;
+export const NavbarItem = styled(motion.li)`
+  position: relative;
+`;
+
+export const Amount = styled.span`
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 10px;
+  height: 10px;
+
+  background: ${Color.RED};
+  color: white;
+  border-radius: 50%;
+`;
 
 export const NavbarMobileList = styled.ul`
   display: flex;

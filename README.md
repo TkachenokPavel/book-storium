@@ -34,8 +34,6 @@
 
 ## About
 
-[![Home Screenshot][home-screenshot]](https://github.com/OlgaUsovich/kinogoogle/)
-
 This project is a graduate work at the front-end developer course, in which I tried to apply all the knowledge and skills I received
 
 In that project:
@@ -78,11 +76,11 @@ Just install the project to see how it works.
 
 ## Usage
 
-This is a simple app to find the book you need. Movies can be found in search by title.
+This is a simple app to find the book you need. Books can be found in search by title.
 
 [![Search Screen Shot][search-screenshot]](https://github.com/TkachenokPavel/book-storium/)
 
-Also you can veiw the full info about book.
+Also you can view the full info about book.
 
 [![Book Details Screen Shot][book-details-screenshot]](https://github.com/TkachenokPavel/book-storium/)
 

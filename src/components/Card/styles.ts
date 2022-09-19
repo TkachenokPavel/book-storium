@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { BODY, BODY2, Color } from "../../ui";
+import { motion } from "framer-motion";
 
-export const StyledCard = styled.li`
+export const StyledCard = styled(motion.li)`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,12 +25,11 @@ export const Title = styled.h3`
   align-self: flex-start;
 
   ${BODY};
-  text-indent: 15px;
+  font-family: "Bebas Neue", cursive;
+  font-size: 18px;
   font-weight: 700;
   line-height: 1;
-  letter-spacing: 0.05px;
-
-  word-break: break-all;
+  letter-spacing: 0.3px;
 
   padding: 10px 20px;
 `;

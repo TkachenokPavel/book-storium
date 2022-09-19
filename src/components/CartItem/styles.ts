@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 import { CloseIcon } from "../../assets";
 import { BODY, Color, H3, Media } from "../../ui";
@@ -105,7 +106,7 @@ export const Price = styled.span`
   } ;
 `;
 
-export const ButtonRemove = styled.button`
+export const ButtonRemove = styled(motion.button)`
   position: absolute;
   right: 0;
   bottom: 40%;
