@@ -6,12 +6,13 @@ import { useNavigate } from "react-router-dom";
 import { CircleLoader } from "react-spinners";
 import { ROUTE } from "../../router/routes";
 import {
-  setIsLoading,
+  useAppDispatch,
+  useAppSelector,
+  getUser,
   setError,
+  setIsLoading,
   setUser,
-} from "../../store/features/authentication/authenticationSlice";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { getUser } from "../../store/selectors/authenticationSelector";
+} from "../../store";
 import { getFirebaseMessageError } from "../../utils/firebaseError";
 import {
   Button,

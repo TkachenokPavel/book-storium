@@ -1,9 +1,8 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useDebounce } from "../../hooks/useDebounce";
-import { useInput } from "../../hooks/useInput";
+import { useDebounce, useInput } from "../../hooks";
 import { removeState, setSearchValue } from "../../store/features/search/searchSlice";
-import { useAppDispatch } from "../../store/hooks";
+import { useAppDispatch } from "../../store";
 import { validateSearchValue } from "../../utils";
 import { Input, SearchButton, StyledSearch } from "./styles";
 

@@ -3,7 +3,7 @@ import { useWindiwSize } from "../../hooks";
 import { getCart, removeItem, useAppDispatch, useAppSelector } from "../../store";
 import { ICartItem } from "../../types/types";
 import { getAuthor } from "../../utils";
-import { getItemTotalPrice } from "../../utils/helpers";
+import { getItemTotalPrice } from "../../utils";
 import { Counter } from "../Counter";
 import {
   StyledCartItem,

@@ -12,9 +12,7 @@ import {
 import { ArrowBackIcon } from "../../assets";
 import { CSSProperties, useEffect } from "react";
 import { Carousel, CartItem, Title } from "../../components";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { calculateTotals } from "../../store/features/cart/cartSlice";
-import { getCart } from "../../store/selectors/cartSelector";
+import { calculateTotals, getCart, useAppDispatch, useAppSelector } from "../../store";
 
 const arrowStyles: CSSProperties = {
   cursor: "pointer",

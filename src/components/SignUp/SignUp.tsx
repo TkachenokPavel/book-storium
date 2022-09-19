@@ -11,13 +11,14 @@ import {
   StyledForm,
 } from "./styles";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import {
+  getUser,
   removeIsLoading,
   setError,
   setIsLoading,
-} from "../../store/features/authentication/authenticationSlice";
-import { getUser } from "../../store/selectors/authenticationSelector";
+  useAppDispatch,
+  useAppSelector,
+} from "../../store";
 import CircleLoader from "react-spinners/CircleLoader";
 import { CSSProperties, useEffect, useRef } from "react";
 import { getFirebaseMessageError } from "../../utils/firebaseError";

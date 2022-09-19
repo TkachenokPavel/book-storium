@@ -2,8 +2,7 @@ import { CSSProperties } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowBackIcon } from "../../assets";
 import { Carousel, FavoriteItem, Title } from "../../components";
-import { useAppSelector } from "../../store/hooks";
-import { getFavorite } from "../../store/selectors/favoriteSelector";
+import { getFavorite, useAppSelector } from "../../store";
 import { EmptyFavorites, FavoritesList, StyledFavoritesPage } from "./styles";
 
 const arrowStyles: CSSProperties = {

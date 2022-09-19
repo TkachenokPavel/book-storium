@@ -4,9 +4,13 @@ import { IBookDetails } from "../../types/types";
 import { Color } from "../../ui";
 import { CSSProperties } from "styled-components";
 import { useEffect, useState } from "react";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { getFavorite } from "../../store/selectors/favoriteSelector";
-import { removeFavorite, addFavorite } from "../../store";
+import {
+  addFavorite,
+  getFavorite,
+  removeFavorite,
+  useAppDispatch,
+  useAppSelector,
+} from "../../store";
 
 interface IProps {
   book: IBookDetails;

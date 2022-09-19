@@ -1,7 +1,6 @@
 import { getAuth, signOut } from "firebase/auth";
 import { Title } from "../../components";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { getUser } from "../../store/selectors/authenticationSelector";
+import { getUser, removeUser, useAppDispatch, useAppSelector } from "../../store";
 import {
   DateTitle,
   DateWrapper,
@@ -15,7 +14,6 @@ import {
 } from "./styles";
 import { IoMdExit } from "react-icons/io";
 import { CSSProperties } from "react";
-import { removeUser } from "../../store/features/authentication/authenticationSlice";
 
 const exitStyle: CSSProperties = {
   marginTop: "35px",

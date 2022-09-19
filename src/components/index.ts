@@ -23,6 +23,8 @@ import { NavbarMobileItem } from "./NavbarMobileItem";
 import { ModeSwitcher } from "./ModeSwitcher";
 import { CarouselItem } from "./CarouselItem";
 import { Carousel } from "./Carousel";
+import { SignIn } from "./SignIn";
+import { SignUp } from "./SignUp";
 
 export {
   Header,
@@ -50,4 +52,6 @@ export {
   ModeSwitcher,
   CarouselItem,
   Carousel,
+  SignIn,
+  SignUp,
 };

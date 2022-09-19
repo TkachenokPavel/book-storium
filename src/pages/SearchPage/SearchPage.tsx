@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 import { BooksList, Title } from "../../components";
-import { fetchSearchedBooks } from "../../store/features/search/searchSlice";
-import { useAppSelector, useAppDispatch } from "../../store/hooks";
-import { getSearch } from "../../store/selectors/searchSelector";
+import { fetchSearchedBooks, getSearch, useAppDispatch, useAppSelector } from "../../store";
 import {
   ControlerWrapper,
   EmptyList,
@@ -14,7 +12,7 @@ import {
   StyledSearchPage,
 } from "./styles";
 import { GrLinkPrevious, GrLinkNext } from "react-icons/gr";
-import { getPagesCount } from "../../utils/helpers";
+import { getPagesCount } from "../../utils";
 import { useNavigate, useParams } from "react-router-dom";
 
 export const SearchPage = () => {

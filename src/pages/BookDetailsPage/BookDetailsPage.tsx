@@ -4,10 +4,14 @@ import CircleLoader from "react-spinners/CircleLoader";
 import { ArrowBackIcon } from "../../assets";
 import { BookTabs, Carousel, FavoriteButton, Rating, Title } from "../../components";
 import { ErrorMassage } from "../../components/BooksList/styles";
-import { fetchBookDetails } from "../../store/features/bookDetails/bookDetailsSlice";
-import { addItem, calculateTotals } from "../../store/features/cart/cartSlice";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { getBookDetails } from "../../store/selectors/bookDetailsSelector";
+import {
+  addItem,
+  calculateTotals,
+  fetchBookDetails,
+  getBookDetails,
+  useAppDispatch,
+  useAppSelector,
+} from "../../store";
 import { getAuthor, getPrice } from "../../utils";
 import {
   BookDetailsList,

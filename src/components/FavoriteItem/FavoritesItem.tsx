@@ -15,11 +15,10 @@ import {
 import { IoMdHeart } from "react-icons/io";
 import { CSSProperties } from "react";
 import { Color } from "../../ui";
-import { useAppDispatch } from "../../store/hooks";
+import { removeFavorite, useAppDispatch } from "../../store";
 import { Link } from "react-router-dom";
-import { useWindiwSize } from "../../hooks/useWindowSize";
+import { useWindiwSize } from "../../hooks";
 import { FavoriteButton } from "../FavoriteButton";
-import { removeFavorite } from "../../store";
 
 interface IProps {
   favorite: IBookDetails;

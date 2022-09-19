@@ -1,8 +1,6 @@
 import { useState } from "react";
-import { ModalWindow } from "../../components";
-import { SignIn } from "../../components/SignIn";
-import { SignUp } from "../../components/SignUp";
-import { useToggle } from "../../hooks/useToggle";
+import { ModalWindow, SignIn, SignUp } from "../../components";
+import { useToggle } from "../../hooks";
 import {
   SignInSwitch,
   SignUpSwitch,

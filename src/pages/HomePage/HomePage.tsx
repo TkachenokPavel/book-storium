@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 import { BooksList, Title } from "../../components";
-import { fetchNewBooks } from "../../store/features/newBooks/newBooksSlice";
-import { useAppDispatch, useAppSelector } from "../../store/hooks";
-import { getNewBooks } from "../../store/selectors/newBooksSelector";
+import { fetchNewBooks, getNewBooks, useAppDispatch, useAppSelector } from "../../store";
 import { StyledHomePage } from "./styles";
 
 export const HomePage = () => {

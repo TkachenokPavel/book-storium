@@ -5,6 +5,7 @@ import {
   getShortBookTitle,
   getPagesCount,
   getPriceAsNumber,
+  getItemTotalPrice,
 } from "./helpers";
 
 export {
@@ -14,4 +15,5 @@ export {
   getShortBookTitle,
   getPagesCount,
   getPriceAsNumber,
+  getItemTotalPrice,
 };
