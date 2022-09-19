@@ -21,6 +21,8 @@ import { ResetForm } from "./ResetForm";
 import { CloseNavbar } from "./CloseNavbar";
 import { NavbarMobileItem } from "./NavbarMobileItem";
 import { ModeSwitcher } from "./ModeSwitcher";
+import { CarouselItem } from "./CarouselItem";
+import { Carousel } from "./Carousel";
 
 export {
   Header,
@@ -46,4 +48,6 @@ export {
   CloseNavbar,
   NavbarMobileItem,
   ModeSwitcher,
+  CarouselItem,
+  Carousel,
 };

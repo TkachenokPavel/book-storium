@@ -19,8 +19,8 @@ export const validateSearchValue = (searchValue: string): string => {
 };
 
 export const getShortBookTitle = (title: string): string => {
-  if (title.length > 40) {
-    return `${title.slice(0, 35)}...`;
+  if (title.length > 35) {
+    return `${title.slice(0, 30)}...`;
   } else return title;
 };
 
