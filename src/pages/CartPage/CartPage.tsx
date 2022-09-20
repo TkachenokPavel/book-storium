@@ -11,7 +11,7 @@ import {
 } from "./styles";
 import { ArrowBackIcon } from "../../assets";
 import { CSSProperties, useEffect } from "react";
-import { Carousel, CartItem, Title } from "../../components";
+import { CartItem, Title } from "../../components";
 import { calculateTotals, getCart, useAppDispatch, useAppSelector } from "../../store";
 
 const arrowStyles: CSSProperties = {
@@ -55,7 +55,6 @@ export const CartPage = () => {
           <EmptyCart>Your cart is empty</EmptyCart>
         )}
       </CartList>
-      <Carousel />
     </StyledCartPage>
   );
 };
