@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/book-storium/static/css/main.32bef41b.css",
-    "main.js": "/book-storium/static/js/main.65de711e.js",
+    "main.js": "/book-storium/static/js/main.a5a70dbb.js",
     "static/media/not-found.jpg": "/book-storium/static/media/not-found.00a6dc47996be375e6b3.jpg",
     "static/media/logo.svg": "/book-storium/static/media/logo.ec20bc4d1e0d67089e37c3938f406acc.svg",
     "static/media/slick.svg": "/book-storium/static/media/slick.2630a3e3eab21c607e21.svg",
@@ -18,10 +18,10 @@
     "static/media/increase.svg": "/book-storium/static/media/increase.20a4951c1111c79be9a2b8623448f36c.svg",
     "static/media/decrease.svg": "/book-storium/static/media/decrease.6161b142040efac71c564e839e9063bd.svg",
     "main.32bef41b.css.map": "/book-storium/static/css/main.32bef41b.css.map",
-    "main.65de711e.js.map": "/book-storium/static/js/main.65de711e.js.map"
+    "main.a5a70dbb.js.map": "/book-storium/static/js/main.a5a70dbb.js.map"
   },
   "entrypoints": [
     "static/css/main.32bef41b.css",
-    "static/js/main.65de711e.js"
+    "static/js/main.a5a70dbb.js"
   ]
 }
