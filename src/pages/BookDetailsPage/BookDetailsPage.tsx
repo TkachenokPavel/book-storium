@@ -5,10 +5,11 @@ import { ArrowBackIcon } from "../../assets";
 import { BookDetails, Title } from "../../components";
 import { ErrorMassage } from "../../components/BooksList/styles";
 import { fetchBookDetails, getBookDetails, useAppDispatch, useAppSelector } from "../../store";
+import { Color } from "../../ui";
 import { StyledBookPage } from "./styles";
 
 const override: CSSProperties = {
-  marginTop: "100px",
+  marginTop: "300px",
 };
 
 const arrowStyles: CSSProperties = {
@@ -37,7 +38,7 @@ export const BookDetailsPage = () => {
   if (isLoading) {
     return (
       <StyledBookPage>
-        <CircleLoader loading={isLoading} cssOverride={override} size={100} />
+        <CircleLoader loading={isLoading} cssOverride={override} size={100} color={Color.BLACK} />
       </StyledBookPage>
     );
   }

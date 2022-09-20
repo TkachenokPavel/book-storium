@@ -3,6 +3,7 @@ import { IBookShort } from "../../types/types";
 import { Card } from "../Card";
 import { ErrorMassage, StyledBooksList } from "./styles";
 import CircleLoader from "react-spinners/CircleLoader";
+import { Color } from "../../ui";
 
 interface IProps {
   newBooks: IBookShort[];
@@ -12,13 +13,15 @@ interface IProps {
 
 const override: CSSProperties = {
   display: "block",
-  marginTop: "100px",
-  marginBottom: "100px",
+  marginTop: "300px",
+  marginBottom: "300px",
 };
 
 export const BooksList = ({ newBooks, isLoading, errorMessage }: IProps) => {
   if (isLoading) {
-    return <CircleLoader loading={isLoading} cssOverride={override} size={100} />;
+    return (
+      <CircleLoader loading={isLoading} cssOverride={override} size={100} color={Color.BLACK} />
+    );
   }
 
   if (errorMessage) {
