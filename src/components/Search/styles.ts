@@ -23,6 +23,8 @@ export const Input = styled.input`
   width: 100%;
   padding: 10px 15px;
 
+  color: ${Color.BLACK};
+
   background-color: ${Color.BACKGROUND};
   border: none;
   border-bottom: 2px solid ${Color.SECONDARY};

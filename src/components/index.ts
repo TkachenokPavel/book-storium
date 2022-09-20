@@ -26,6 +26,8 @@ import { Carousel } from "./Carousel";
 import { SignIn } from "./SignIn";
 import { SignUp } from "./SignUp";
 import { Subscribe } from "./Subscribe";
+import { ControllerPagination } from "./ControllerPagination";
+import { BookDetails } from "./BookDetails";
 
 export {
   Header,
@@ -56,4 +58,6 @@ export {
   SignIn,
   SignUp,
   Subscribe,
+  ControllerPagination,
+  BookDetails,
 };

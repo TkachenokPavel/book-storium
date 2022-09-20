@@ -37,7 +37,7 @@ export const Description = styled.p`
   color: #a8a8a8;
 `;
 
-export const InputWrapper = styled.div`
+export const Form = styled.form`
   display: flex;
 
   ${Media.SM} {

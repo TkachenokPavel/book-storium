@@ -11,7 +11,7 @@ import { ROUTE } from "../../router/routes";
 import { Link, useNavigate } from "react-router-dom";
 import { Search } from "../Search";
 import { CloseNavbar } from "../CloseNavbar";
-import { useToggle, useWindiwSize } from "../../hooks";
+import { useAuth, useToggle, useWindiwSize } from "../../hooks";
 import { NavbarMobileItem } from "../NavbarMobileItem";
 import { ModeSwitcher } from "../ModeSwitcher";
 import { getCart, getFavorite, useAppSelector } from "../../store";
@@ -24,6 +24,7 @@ const variants = {
 export const Navbar = () => {
   const [isOpen, toggleIsOpen] = useToggle();
   const { width = 0 } = useWindiwSize();
+  const isAuth = useAuth();
   const navigate = useNavigate();
 
   const { cartItems } = useAppSelector(getCart);
@@ -71,13 +72,13 @@ export const Navbar = () => {
         <NavbarList>
           <Link to={ROUTE.FAVORITES}>
             <NavbarItem key="favorite" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-              {favorites.length ? <Amount /> : null}
+              {favorites.length && isAuth ? <Amount /> : null}
               <FavoriteIcon fill="white" />
             </NavbarItem>
           </Link>
           <Link to={ROUTE.CART}>
             <NavbarItem key="cart" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-              {cartItems.length ? <Amount /> : null}
+              {cartItems.length && isAuth ? <Amount /> : null}
               <CartIcon fill="white" />
             </NavbarItem>
           </Link>
